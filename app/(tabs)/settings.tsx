@@ -7,7 +7,6 @@ import {
   Alert,
   ActionSheetIOS,
   Platform,
-  Switch,
   Pressable,
 } from "react-native";
 import { useFocusEffect, useRouter } from "expo-router";
@@ -17,13 +16,12 @@ import i18n from "../../src/i18n";
 import { LinearGradient } from "expo-linear-gradient";
 import Slider from "@react-native-community/slider";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import Svg, { Path, Rect } from "react-native-svg";
+import Svg, { Path, Rect, Circle, Line } from "react-native-svg";
 import {
   loadSettings,
   saveBirthday,
   saveMilestones,
   saveLifeExpectancy,
-  saveDailyQuoteEnabled,
 } from "../../src/utils/storage";
 import { COLORS } from "../../src/utils/constants";
 import { Milestone } from "../../src/types";
@@ -52,8 +50,8 @@ function CalendarIcon() {
   );
 }
 
-
-function GraduationIcon() {
+// SVG icon components for milestone templates
+function GraduationCapIcon() {
   return (
     <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
       <Path
@@ -67,21 +65,34 @@ function GraduationIcon() {
   );
 }
 
-function RingIcon() {
+function BriefcaseIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Rect x="2" y="7" width="20" height="14" rx="2" stroke="#6E6E70" strokeWidth={2} />
+      <Path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+    </Svg>
+  );
+}
+
+function HeartIcon() {
   return (
     <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
       <Path
-        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
         stroke="#6E6E70"
         strokeWidth={2}
-        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <Path
-        d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
-        stroke="#6E6E70"
-        strokeWidth={2}
-        fill="none"
-      />
+    </Svg>
+  );
+}
+
+function BabyIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Circle cx="12" cy="12" r="10" stroke="#6E6E70" strokeWidth={2} />
+      <Path d="M9 9h.01M15 9h.01M9.5 15a3.5 3.5 0 005 0" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
     </Svg>
   );
 }
@@ -108,6 +119,121 @@ function HomeIcon() {
   );
 }
 
+function PlaneIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+function RocketIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3M22 2l-1 1M22 2s-5 2-10 7l-1.5 1.5a2.88 2.88 0 000 4L13 17c1.1 1.1 2.9 1.1 4 0L18.5 15.5C23 10.5 22 2 22 2z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+function SunsetIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path d="M17 18a5 5 0 00-10 0" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="12" y1="9" x2="12" y2="2" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="4.22" y1="10.22" x2="5.64" y2="11.64" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="1" y1="18" x2="3" y2="18" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="21" y1="18" x2="23" y2="18" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="18.36" y1="11.64" x2="19.78" y2="10.22" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Line x1="1" y1="22" x2="23" y2="22" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" />
+      <Path d="M16 5l-4 4-4-4" stroke="#6E6E70" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+    </Svg>
+  );
+}
+
+function CarIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H5.24a2 2 0 00-1.8 1.1l-.8 1.63A6 6 0 002 12.42V16h2"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Circle cx="6.5" cy="16.5" r="2.5" stroke="#6E6E70" strokeWidth={2} />
+      <Circle cx="16.5" cy="16.5" r="2.5" stroke="#6E6E70" strokeWidth={2} />
+    </Svg>
+  );
+}
+
+function DogIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5M8 14v.5M16 14v.5"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M11.25 16.25h1.5L12 17l-.75-.75z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M4.42 11.247A13.152 13.152 0 004 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0112 5c.78 0 1.5.108 2.161.306"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+function BookOpenIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+function TrophyIcon() {
+  return (
+    <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0012 0V2z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
 function StarIcon({ color }: { color?: string }) {
   return (
     <Svg width={20} height={20} viewBox="0 0 24 24" fill="none">
@@ -123,10 +249,20 @@ function StarIcon({ color }: { color?: string }) {
   );
 }
 
+// Map icon names to components
 const MILESTONE_ICON_MAP: Record<string, React.FC> = {
-  Graduation: GraduationIcon,
-  Married: RingIcon,
-  "First Home": HomeIcon,
+  "graduation-cap": GraduationCapIcon,
+  "briefcase": BriefcaseIcon,
+  "heart": HeartIcon,
+  "baby": BabyIcon,
+  "home": HomeIcon,
+  "plane": PlaneIcon,
+  "rocket": RocketIcon,
+  "sunset": SunsetIcon,
+  "car": CarIcon,
+  "dog": DogIcon,
+  "book-open": BookOpenIcon,
+  "trophy": TrophyIcon,
 };
 
 export default function SettingsScreen() {
@@ -139,7 +275,6 @@ export default function SettingsScreen() {
   const [lifeExpectancy, setLifeExpectancy] = useState(80);
   const [restoringPurchase, setRestoringPurchase] = useState(false);
   const [isPro, setIsPro] = useState(false);
-  const [dailyQuoteEnabled, setDailyQuoteEnabled] = useState(false);
   const [pendingMilestoneTemplate, setPendingMilestoneTemplate] = useState<(typeof MILESTONE_TEMPLATES)[0] | null>(null);
   const [showMilestoneDatePicker, setShowMilestoneDatePicker] = useState(false);
   const [milestonePickerDate, setMilestonePickerDate] = useState(new Date());
@@ -150,7 +285,6 @@ export default function SettingsScreen() {
         setBirthday(settings.birthday);
         setMilestones(settings.milestones);
         setLifeExpectancy(settings.lifeExpectancy ?? 80);
-        setDailyQuoteEnabled(settings.dailyQuoteEnabled ?? false);
         if (settings.birthday) {
           const d = new Date(settings.birthday + "T00:00:00");
           if (!isNaN(d.getTime())) {
@@ -192,6 +326,16 @@ export default function SettingsScreen() {
     });
   };
 
+  const formatMilestoneDate = (dateStr: string) => {
+    const d = new Date(dateStr + "T00:00:00");
+    const locale = getPickerLocale();
+    return d.toLocaleDateString(locale, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
   const handleBirthdayPickerChange = async (_event: any, selectedDate?: Date) => {
     if (Platform.OS === "android") {
       setShowBirthdayPicker(false);
@@ -227,6 +371,7 @@ export default function SettingsScreen() {
         id: Date.now().toString(),
         name: pendingMilestoneTemplate.name,
         emoji: pendingMilestoneTemplate.emoji,
+        icon: pendingMilestoneTemplate.icon,
         date: dateStr,
       };
       const updated = [...milestones, newMilestone];
@@ -270,22 +415,40 @@ export default function SettingsScreen() {
     }
   };
 
-  const handleToggleDailyQuote = async (value: boolean) => {
-    setDailyQuoteEnabled(value);
-    await saveDailyQuoteEnabled(value);
-  };
-
   const renderMilestoneIcon = (milestone: Milestone) => {
-    const IconComp = MILESTONE_ICON_MAP[milestone.name];
-    if (IconComp) {
+    // Try icon name first, then fall back to template name matching
+    const iconName = milestone.icon;
+    const IconComp = iconName ? MILESTONE_ICON_MAP[iconName] : undefined;
+
+    // Fall back: find template by name and use its icon
+    const fallbackTemplate = !IconComp
+      ? MILESTONE_TEMPLATES.find((t) => t.name === milestone.name)
+      : undefined;
+    const FallbackComp = fallbackTemplate?.icon
+      ? MILESTONE_ICON_MAP[fallbackTemplate.icon]
+      : undefined;
+
+    const FinalIcon = IconComp || FallbackComp;
+
+    if (FinalIcon) {
       return (
         <View style={{ width: 24, height: 24, alignItems: "center", justifyContent: "center", marginRight: 12 }}>
-          <IconComp />
+          <FinalIcon />
         </View>
       );
     }
+    // Ultimate fallback: gold dot
     return (
-      <Text style={{ fontSize: 20, marginRight: 12 }}>{milestone.emoji}</Text>
+      <View style={{ width: 24, height: 24, alignItems: "center", justifyContent: "center", marginRight: 12 }}>
+        <View
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: 4,
+            backgroundColor: COLORS.milestone,
+          }}
+        />
+      </View>
     );
   };
 
@@ -453,9 +616,14 @@ export default function SettingsScreen() {
                 }}
               >
                 {renderMilestoneIcon(m)}
-                <Text style={{ flex: 1, fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
-                  {m.name}
-                </Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
+                    {m.name}
+                  </Text>
+                  <Text style={{ fontSize: 12, color: "#6E6E70", fontFamily: "Cormorant Garamond", marginTop: 2 }}>
+                    {formatMilestoneDate(m.date)}
+                  </Text>
+                </View>
                 <View
                   style={{
                     width: 8,
@@ -470,7 +638,7 @@ export default function SettingsScreen() {
               onPress={() => {
                 if (Platform.OS === "ios") {
                   const options = [
-                    ...MILESTONE_TEMPLATES.map((tmpl) => `${tmpl.emoji} ${tmpl.name}`),
+                    ...MILESTONE_TEMPLATES.map((tmpl) => tmpl.name),
                     t("common.cancel"),
                   ];
                   ActionSheetIOS.showActionSheetWithOptions(
@@ -491,7 +659,7 @@ export default function SettingsScreen() {
                     t("settings.chooseMilestone"),
                     [
                       ...MILESTONE_TEMPLATES.map((tmpl) => ({
-                        text: `${tmpl.emoji} ${tmpl.name}`,
+                        text: tmpl.name,
                         onPress: () => handleAddMilestone(tmpl),
                       })),
                       { text: t("common.cancel"), style: "cancel" as const },
@@ -530,7 +698,7 @@ export default function SettingsScreen() {
                   paddingHorizontal: 16,
                 }}
               >
-                {pendingMilestoneTemplate.emoji} {pendingMilestoneTemplate.name}
+                {pendingMilestoneTemplate.name}
               </Text>
               <DateTimePicker
                 value={milestonePickerDate}
@@ -578,6 +746,20 @@ export default function SettingsScreen() {
               </View>
             </View>
           )}
+          {/* Long press hint */}
+          {milestones.length > 0 && (
+            <Text
+              style={{
+                fontSize: 10,
+                color: "#4A4A4A",
+                fontFamily: "Cormorant Garamond",
+                textAlign: "center",
+                marginTop: 2,
+              }}
+            >
+              {t("settings.longPressToRemove")}
+            </Text>
+          )}
         </View>
 
         {/* Pro Status */}
@@ -593,7 +775,6 @@ export default function SettingsScreen() {
             {t("settings.pro")}
           </Text>
           {isPro ? (
-            /* Pro Active Card - warm gradient with gold border */
             <LinearGradient
               colors={["#1A1A1A", "#1F1810", "#1A1A1A"]}
               start={{ x: 0, y: 0 }}
@@ -619,7 +800,6 @@ export default function SettingsScreen() {
               </View>
             </LinearGradient>
           ) : (
-            /* Upgrade Button - gold gradient */
             <View>
               <Pressable
                 onPress={() => router.push("/paywall")}
@@ -653,49 +833,12 @@ export default function SettingsScreen() {
           )}
         </View>
 
-        {/* Notifications */}
-        <View style={{ gap: 8 }}>
-          <Text
-            style={{
-              fontSize: 11,
-              color: COLORS.milestone,
-              letterSpacing: 3,
-              fontFamily: "Cormorant Garamond",
-            }}
-          >
-            {t("settings.notifications")}
-          </Text>
-          <View
-            style={{
-              backgroundColor: "#1A1A1A",
-              borderRadius: 12,
-              minHeight: 52,
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingHorizontal: 16,
-              paddingVertical: 8,
-            }}
-          >
-            <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond", flex: 1 }}>
-              {t("settings.dailyQuote")}
-            </Text>
-            <Switch
-              value={dailyQuoteEnabled}
-              onValueChange={handleToggleDailyQuote}
-              trackColor={{ false: "#2A2A2A", true: COLORS.milestone }}
-              thumbColor="#FFFFFF"
-              style={{ marginLeft: 12 }}
-            />
-          </View>
-        </View>
-
         {/* Footer */}
         <View style={{ gap: 8, paddingTop: 4 }}>
           {/* About */}
           <TouchableOpacity
             onPress={() => {
-              Alert.alert("Memento", "Version 1.0.0\nA life in weeks.\n\nMade with care.");
+              Alert.alert(t("settings.aboutTitle"), t("settings.aboutMessage"));
             }}
             style={{
               backgroundColor: "#1A1A1A",

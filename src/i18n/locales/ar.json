@@ -51,6 +51,9 @@
     "restorePurchase": "استعادة الشراء",
     "restoring": "جارٍ الاستعادة...",
     "about": "حول التطبيق",
+    "aboutTitle": "Memento",
+    "aboutMessage": "الإصدار 1.0.0\nحياة بالأسابيع.\n\nصُنع بعناية.",
+    "longPressToRemove": "اضغط مطولاً للإزالة",
     "cancel": "إلغاء",
     "save": "حفظ",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "لم نتمكن من العثور على عمليات شراء سابقة.",
     "error": "خطأ",
     "failedRestore": "فشل استعادة عمليات الشراء.",
-    "ok": "حسناً"
+    "ok": "حسناً",
+    "purchaseSuccess": "مرحباً في Pro!",
+    "purchaseSuccessMessage": "شكراً لدعمك. تم فتح جميع الميزات."
+  },
+  "favorites": {
+    "title": "المفضلة",
+    "empty": "لا توجد مفضلات بعد",
+    "removeTitle": "إزالة من المفضلة",
+    "removeConfirm": "إزالة هذا الاقتباس من المفضلة؟",
+    "longPressHint": "اضغط مطولاً للإزالة"
   },
   "milestones": {
     "graduation": "التخرج",

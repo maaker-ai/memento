@@ -51,6 +51,9 @@
     "restorePurchase": "Restaurar compra",
     "restoring": "Restaurando...",
     "about": "Acerca de",
+    "aboutTitle": "Memento",
+    "aboutMessage": "Versión 1.0.0\nUna vida en semanas.\n\nHecho con cuidado.",
+    "longPressToRemove": "Mantener pulsado para eliminar",
     "cancel": "Cancelar",
     "save": "Guardar",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "No encontramos compras anteriores.",
     "error": "Error",
     "failedRestore": "No se pudo restaurar la compra.",
-    "ok": "OK"
+    "ok": "OK",
+    "purchaseSuccess": "Bienvenido a Pro!",
+    "purchaseSuccessMessage": "Gracias por tu apoyo. Todas las funciones están desbloqueadas."
+  },
+  "favorites": {
+    "title": "Favoritos",
+    "empty": "Aún no hay favoritos",
+    "removeTitle": "Eliminar favorito",
+    "removeConfirm": "¿Eliminar esta cita de favoritos?",
+    "longPressHint": "Mantener pulsado para eliminar"
   },
   "milestones": {
     "graduation": "Graduación",

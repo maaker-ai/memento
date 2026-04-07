@@ -51,6 +51,9 @@
     "restorePurchase": "Pulihkan Pembelian",
     "restoring": "Memulihkan...",
     "about": "Tentang",
+    "aboutTitle": "Memento",
+    "aboutMessage": "Versi 1.0.0\nHidup dalam minggu.\n\nDibuat dengan sepenuh hati.",
+    "longPressToRemove": "Tekan lama untuk menghapus",
     "cancel": "Batal",
     "save": "Simpan",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "Kami tidak menemukan pembelian sebelumnya.",
     "error": "Kesalahan",
     "failedRestore": "Gagal memulihkan pembelian.",
-    "ok": "OK"
+    "ok": "OK",
+    "purchaseSuccess": "Selamat datang di Pro!",
+    "purchaseSuccessMessage": "Terima kasih atas dukunganmu. Semua fitur telah dibuka."
+  },
+  "favorites": {
+    "title": "Favorit",
+    "empty": "Belum ada favorit",
+    "removeTitle": "Hapus Favorit",
+    "removeConfirm": "Hapus kutipan ini dari favorit?",
+    "longPressHint": "Tekan lama untuk menghapus"
   },
   "milestones": {
     "graduation": "Wisuda",

@@ -95,7 +95,9 @@ export default function PaywallScreen() {
     try {
       const success = await purchasePackage(lifetimePackage);
       if (success) {
-        router.back();
+        Alert.alert(t("paywall.purchaseSuccess"), t("paywall.purchaseSuccessMessage"), [
+          { text: t("paywall.ok"), onPress: () => router.back() },
+        ]);
       }
     } catch (e: any) {
       Alert.alert(t("paywall.purchaseFailed"), e.message || t("paywall.somethingWrong"));

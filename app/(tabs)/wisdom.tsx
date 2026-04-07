@@ -1,6 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { View, Text, TouchableOpacity, Share, Platform } from "react-native";
+import React, { useState, useCallback, useEffect, useRef } from "react";
+import { View, Text, TouchableOpacity, Share, Platform, Animated, Easing } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import Svg, { Path } from "react-native-svg";
 import * as Haptics from "expo-haptics";
@@ -52,10 +53,27 @@ function NextIcon() {
   );
 }
 
+function BookmarkIcon() {
+  return (
+    <Svg width={22} height={22} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"
+        stroke="#6E6E70"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </Svg>
+  );
+}
+
 export default function WisdomScreen() {
   const [quote, setQuote] = useState<Quote>(getDailyQuote);
   const [favorites, setFavorites] = useState<string[]>([]);
   const { t } = useTranslation();
+  const router = useRouter();
+  const fadeAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
     getFavoriteQuotes().then(setFavorites).catch(() => {});
@@ -75,20 +93,57 @@ export default function WisdomScreen() {
     if (Platform.OS === "ios") {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
-    const nowFavorited = await toggleFavoriteQuote(quote.text);
+    await toggleFavoriteQuote(quote.text);
     const updated = await getFavoriteQuotes();
     setFavorites(updated);
   }, [quote]);
 
   const handleNext = useCallback(() => {
-    setQuote(getRandomQuote());
-  }, []);
+    // Fade out -> switch quote -> fade in
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      easing: Easing.in(Easing.cubic),
+      useNativeDriver: true,
+    }).start(() => {
+      setQuote(getRandomQuote());
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }).start();
+    });
+  }, [fadeAnim]);
 
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: COLORS.background }}
       edges={["top"]}
     >
+      {/* Header with bookmark button */}
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          paddingHorizontal: 20,
+          paddingTop: 8,
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => router.push("/favorites")}
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <BookmarkIcon />
+        </TouchableOpacity>
+      </View>
+
       <View
         style={{
           flex: 1,
@@ -99,41 +154,49 @@ export default function WisdomScreen() {
           gap: 24,
         }}
       >
-        <Text
+        <Animated.View
           style={{
-            fontSize: 72,
-            color: COLORS.milestone,
-            fontFamily: "CormorantGaramond-Light",
-            lineHeight: 80,
-            height: 56,
-            textAlign: "center",
+            alignItems: "center",
+            gap: 24,
+            opacity: fadeAnim,
           }}
         >
-          {"\u201C"}
-        </Text>
+          <Text
+            style={{
+              fontSize: 72,
+              color: COLORS.milestone,
+              fontFamily: "CormorantGaramond-Light",
+              lineHeight: 80,
+              height: 56,
+              textAlign: "center",
+            }}
+          >
+            {"\u201C"}
+          </Text>
 
-        <Text
-          style={{
-            fontSize: 26,
-            color: "#E5E5E5",
-            fontFamily: "Cormorant Garamond",
-            lineHeight: 39,
-            textAlign: "center",
-          }}
-        >
-          {quote.text}
-        </Text>
+          <Text
+            style={{
+              fontSize: 26,
+              color: "#E5E5E5",
+              fontFamily: "Cormorant Garamond",
+              lineHeight: 39,
+              textAlign: "center",
+            }}
+          >
+            {quote.text}
+          </Text>
 
-        <Text
-          style={{
-            fontSize: 14,
-            color: "#6E6E70",
-            textAlign: "center",
-            fontFamily: "Cormorant Garamond",
-          }}
-        >
-          {t("wisdom.authorPrefix")} {quote.author}
-        </Text>
+          <Text
+            style={{
+              fontSize: 14,
+              color: "#6E6E70",
+              textAlign: "center",
+              fontFamily: "Cormorant Garamond",
+            }}
+          >
+            {t("wisdom.authorPrefix")} {quote.author}
+          </Text>
+        </Animated.View>
 
         <View
           style={{

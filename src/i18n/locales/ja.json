@@ -51,6 +51,9 @@
     "restorePurchase": "購入を復元",
     "restoring": "復元中...",
     "about": "アプリについて",
+    "aboutTitle": "Memento",
+    "aboutMessage": "バージョン 1.0.0\n週で見る人生。\n\n心を込めて作りました。",
+    "longPressToRemove": "長押しで削除",
     "cancel": "キャンセル",
     "save": "保存",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "以前の購入記録が見つかりませんでした。",
     "error": "エラー",
     "failedRestore": "購入の復元に失敗しました。",
-    "ok": "OK"
+    "ok": "OK",
+    "purchaseSuccess": "Pro へようこそ！",
+    "purchaseSuccessMessage": "ご支援ありがとうございます。すべての機能が解放されました。"
+  },
+  "favorites": {
+    "title": "お気に入り",
+    "empty": "お気に入りはまだありません",
+    "removeTitle": "お気に入り解除",
+    "removeConfirm": "この名言をお気に入りから削除しますか？",
+    "longPressHint": "長押しで削除"
   },
   "milestones": {
     "graduation": "卒業",

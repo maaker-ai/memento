@@ -51,6 +51,9 @@
     "restorePurchase": "Восстановить покупку",
     "restoring": "Восстановление...",
     "about": "О приложении",
+    "aboutTitle": "Memento",
+    "aboutMessage": "Версия 1.0.0\nЖизнь в неделях.\n\nСделано с заботой.",
+    "longPressToRemove": "Удерживайте для удаления",
     "cancel": "Отмена",
     "save": "Сохранить",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "Мы не нашли предыдущих покупок.",
     "error": "Ошибка",
     "failedRestore": "Не удалось восстановить покупку.",
-    "ok": "OK"
+    "ok": "OK",
+    "purchaseSuccess": "Добро пожаловать в Pro!",
+    "purchaseSuccessMessage": "Спасибо за поддержку. Все функции разблокированы."
+  },
+  "favorites": {
+    "title": "Избранное",
+    "empty": "Пока нет избранного",
+    "removeTitle": "Удалить из избранного",
+    "removeConfirm": "Удалить эту цитату из избранного?",
+    "longPressHint": "Удерживайте для удаления"
   },
   "milestones": {
     "graduation": "Выпуск",

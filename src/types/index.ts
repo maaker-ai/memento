@@ -7,6 +7,7 @@ export interface Milestone {
   id: string;
   name: string;
   emoji: string;
+  icon?: string; // lucide-style icon name
   date: string; // ISO date string YYYY-MM-DD
 }
 

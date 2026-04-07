@@ -51,6 +51,9 @@
     "restorePurchase": "恢復購買",
     "restoring": "恢復中...",
     "about": "關於",
+    "aboutTitle": "Memento",
+    "aboutMessage": "版本 1.0.0\n以週為單位的人生。\n\n用心製作。",
+    "longPressToRemove": "長按移除",
     "cancel": "取消",
     "save": "儲存",
     "version": "Memento v1.0.0",
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "未找到之前的購買記錄。",
     "error": "錯誤",
     "failedRestore": "恢復購買失敗。",
-    "ok": "好"
+    "ok": "好",
+    "purchaseSuccess": "歡迎加入 Pro！",
+    "purchaseSuccessMessage": "感謝你的支持。所有功能已解鎖。"
+  },
+  "favorites": {
+    "title": "收藏",
+    "empty": "還沒有收藏",
+    "removeTitle": "取消收藏",
+    "removeConfirm": "從收藏中移除這條名言？",
+    "longPressHint": "長按移除"
   },
   "milestones": {
     "graduation": "畢業",

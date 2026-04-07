@@ -53,6 +53,9 @@
     "restorePurchase": "Restore Purchase",
     "restoring": "Restoring...",
     "about": "About",
+    "aboutTitle": "Memento",
+    "aboutMessage": "Version 1.0.0\nA life in weeks.\n\nMade with care.",
+    "longPressToRemove": "Long press to remove",
     "cancel": "Cancel",
     "save": "Save",
     "version": "Memento v1.0.0"
@@ -75,7 +78,16 @@
     "noPurchaseMessage": "We couldn't find any previous purchases.",
     "error": "Error",
     "failedRestore": "Failed to restore purchases.",
-    "ok": "OK"
+    "ok": "OK",
+    "purchaseSuccess": "Welcome to Pro!",
+    "purchaseSuccessMessage": "Thank you for your support. All features are now unlocked."
+  },
+  "favorites": {
+    "title": "Favorites",
+    "empty": "No favorites yet",
+    "removeTitle": "Remove Favorite",
+    "removeConfirm": "Remove this quote from favorites?",
+    "longPressHint": "Long press to remove"
   },
   "milestones": {
     "graduation": "Graduation",
