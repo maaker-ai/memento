@@ -14,7 +14,8 @@
       "supportsTablet": false,
       "infoPlist": {
         "UIRequiresFullScreen": true
-      }
+      },
+      "bundleIdentifier": "com.maruipp.Memento"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,10 +32,17 @@
     "plugins": [
       "expo-router",
       "expo-sharing",
-      ["expo-splash-screen", {
-        "ios": { "backgroundColor": "#0C0C0C" },
-        "android": { "backgroundColor": "#0C0C0C" }
-      }]
+      [
+        "expo-splash-screen",
+        {
+          "ios": {
+            "backgroundColor": "#0C0C0C"
+          },
+          "android": {
+            "backgroundColor": "#0C0C0C"
+          }
+        }
+      ]
     ]
   }
 }
