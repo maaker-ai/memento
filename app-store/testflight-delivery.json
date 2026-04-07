@@ -1,18 +1,18 @@
 {
-  "uploaded_at": "2026-04-07T19:00:00Z",
-  "build_number": "6",
+  "uploaded_at": "2026-04-08T00:30:00Z",
+  "build_number": "8",
   "version": "1.0.0",
-  "eas_submission_id": "72b10a61-d788-42d7-9391-7bfdbfc2b551",
   "asc_app_id": "6761762165",
   "bundle_id": "ai.maaker.memento",
   "testflight_url": "https://appstoreconnect.apple.com/apps/6761762165/testflight/ios",
   "status": "processing",
-  "ipa_path": "build-1775558000430.ipa",
-  "ipa_size_mb": 19.5,
+  "ipa_path": "build-1775580807854.ipa",
+  "internal_group_id": "38cb1327-91aa-4272-ba4f-b46c60a5b210",
+  "tester_email": "maruipp@gmail.com",
+  "changes": "UX audit fixes: favorites page, milestone dates, quote animation, Pro button, DatePicker, vector icons, i18n About",
   "iap_preflight": {
     "required": true,
     "revenuecat_ios_key": "appl_UPskDdhaGEVfSQtQAPpZVfcPkGJ",
-    "entitlement": "pro",
-    "note": "RevenueCat configured, Apple IAP product setup pending"
+    "entitlement": "pro"
   }
 }
