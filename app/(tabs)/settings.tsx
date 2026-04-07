@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   TextInput,
   Alert,
-  AlertButton,
+  ActionSheetIOS,
   Platform,
   Switch,
 } from "react-native";
@@ -50,19 +50,6 @@ function CalendarIcon() {
   );
 }
 
-function ChevronRight() {
-  return (
-    <Svg width={16} height={16} viewBox="0 0 24 24" fill="none">
-      <Path
-        d="M9 18l6-6-6-6"
-        stroke="#4A4A4A"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </Svg>
-  );
-}
 
 function GraduationIcon() {
   return (
@@ -365,15 +352,15 @@ export default function SettingsScreen() {
                       textAlign: "center",
                       borderWidth: 1,
                       borderColor: birthYear ? COLORS.milestone : "#2A2A2A",
-                      fontFamily: "Cormorant Garamond",
                     }}
                     placeholder="1992"
                     placeholderTextColor="#4A4A4A"
                     keyboardType="number-pad"
                     maxLength={4}
                     value={birthYear}
-                    onChangeText={setBirthYear}
+                    onChangeText={(text) => setBirthYear(text.replace(/[^0-9]/g, ""))}
                     returnKeyType="next"
+                    autoCorrect={false}
                   />
                 </View>
                 <View style={{ flex: 1 }}>
@@ -390,16 +377,16 @@ export default function SettingsScreen() {
                       color: "#E5E5E5",
                       textAlign: "center",
                       borderWidth: 1,
-                      borderColor: "#2A2A2A",
-                      fontFamily: "Cormorant Garamond",
+                      borderColor: birthMonth ? COLORS.milestone : "#2A2A2A",
                     }}
                     placeholder="03"
                     placeholderTextColor="#4A4A4A"
                     keyboardType="number-pad"
                     maxLength={2}
                     value={birthMonth}
-                    onChangeText={setBirthMonth}
+                    onChangeText={(text) => setBirthMonth(text.replace(/[^0-9]/g, ""))}
                     returnKeyType="next"
+                    autoCorrect={false}
                   />
                 </View>
                 <View style={{ flex: 1 }}>
@@ -416,17 +403,17 @@ export default function SettingsScreen() {
                       color: "#E5E5E5",
                       textAlign: "center",
                       borderWidth: 1,
-                      borderColor: "#2A2A2A",
-                      fontFamily: "Cormorant Garamond",
+                      borderColor: birthDay ? COLORS.milestone : "#2A2A2A",
                     }}
                     placeholder="15"
                     placeholderTextColor="#4A4A4A"
                     keyboardType="number-pad"
                     maxLength={2}
                     value={birthDay}
-                    onChangeText={setBirthDay}
+                    onChangeText={(text) => setBirthDay(text.replace(/[^0-9]/g, ""))}
                     returnKeyType="done"
                     onSubmitEditing={handleSaveBirthday}
+                    autoCorrect={false}
                   />
                 </View>
               </View>
@@ -513,13 +500,13 @@ export default function SettingsScreen() {
               thumbTintColor={COLORS.milestone}
               onValueChange={(val) => setLifeExpectancy(Math.round(val))}
               onSlidingComplete={(val) => saveLifeExpectancy(Math.round(val))}
-              style={{ marginHorizontal: -4 }}
+              style={{ marginHorizontal: -4, height: 40 }}
             />
           </View>
         </View>
 
         {/* Milestones */}
-        <View style={{ gap: 8 }}>
+        <View style={{ gap: 8, marginTop: 4 }}>
           <Text
             style={{
               fontSize: 11,
@@ -567,16 +554,36 @@ export default function SettingsScreen() {
             ))}
             <TouchableOpacity
               onPress={() => {
-                const buttons: AlertButton[] = MILESTONE_TEMPLATES.map((tmpl) => ({
-                  text: `${tmpl.emoji} ${tmpl.name}`,
-                  onPress: () => handleAddMilestone(tmpl),
-                }));
-                buttons.push({ text: t("common.cancel"), style: "cancel", onPress: () => {} });
-                Alert.alert(
-                  t("settings.addMilestoneTitle"),
-                  t("settings.chooseMilestone"),
-                  buttons
-                );
+                if (Platform.OS === "ios") {
+                  const options = [
+                    ...MILESTONE_TEMPLATES.map((tmpl) => `${tmpl.emoji} ${tmpl.name}`),
+                    t("common.cancel"),
+                  ];
+                  ActionSheetIOS.showActionSheetWithOptions(
+                    {
+                      options,
+                      cancelButtonIndex: options.length - 1,
+                      title: t("settings.chooseMilestone"),
+                    },
+                    (buttonIndex) => {
+                      if (buttonIndex < MILESTONE_TEMPLATES.length) {
+                        handleAddMilestone(MILESTONE_TEMPLATES[buttonIndex]);
+                      }
+                    }
+                  );
+                } else {
+                  Alert.alert(
+                    t("settings.addMilestoneTitle"),
+                    t("settings.chooseMilestone"),
+                    [
+                      ...MILESTONE_TEMPLATES.map((tmpl) => ({
+                        text: `${tmpl.emoji} ${tmpl.name}`,
+                        onPress: () => handleAddMilestone(tmpl),
+                      })),
+                      { text: t("common.cancel"), style: "cancel" as const },
+                    ]
+                  );
+                }
               }}
               style={{
                 paddingVertical: 14,
@@ -712,14 +719,12 @@ export default function SettingsScreen() {
               height: 48,
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "space-between",
               paddingHorizontal: 16,
             }}
           >
             <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
               {t("settings.about")}
             </Text>
-            <ChevronRight />
           </TouchableOpacity>
 
           {/* Restore Purchase */}
@@ -732,7 +737,6 @@ export default function SettingsScreen() {
               height: 48,
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "space-between",
               paddingHorizontal: 16,
               opacity: restoringPurchase ? 0.5 : 1,
             }}
@@ -740,7 +744,6 @@ export default function SettingsScreen() {
             <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
               {restoringPurchase ? t("settings.restoring") : t("settings.restorePurchase")}
             </Text>
-            <ChevronRight />
           </TouchableOpacity>
 
           <Text style={{ fontSize: 12, color: "#4A4A4A", textAlign: "center", marginTop: 4, fontFamily: "Cormorant Garamond" }}>

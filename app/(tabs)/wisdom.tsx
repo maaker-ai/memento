@@ -104,7 +104,9 @@ export default function WisdomScreen() {
             fontSize: 72,
             color: COLORS.milestone,
             fontFamily: "CormorantGaramond-Light",
-            lineHeight: 40,
+            lineHeight: 80,
+            height: 56,
+            textAlign: "center",
           }}
         >
           {"\u201C"}
