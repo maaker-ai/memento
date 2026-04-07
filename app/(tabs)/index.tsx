@@ -14,12 +14,14 @@ export default function LifeScreen() {
   const { t } = useTranslation();
   const [birthday, setBirthday] = useState<string | null>(null);
   const [milestones, setMilestones] = useState<Milestone[]>([]);
+  const [lifeExpectancy, setLifeExpectancy] = useState(80);
   const [loading, setLoading] = useState(true);
 
   const loadData = useCallback(async () => {
     const settings = await loadSettings();
     setBirthday(settings.birthday);
     setMilestones(settings.milestones);
+    setLifeExpectancy(settings.lifeExpectancy ?? 80);
     setLoading(false);
   }, []);
 
@@ -56,8 +58,8 @@ export default function LifeScreen() {
     );
   }
 
-  const progress = getLifeProgress(birthday);
-  const remaining = getRemainingWeeks(birthday);
+  const progress = getLifeProgress(birthday, lifeExpectancy);
+  const remaining = getRemainingWeeks(birthday, lifeExpectancy);
 
   return (
     <SafeAreaView
@@ -103,7 +105,7 @@ export default function LifeScreen() {
           </Text>
         </View>
 
-        <LifeGrid birthday={birthday} milestones={milestones} />
+        <LifeGrid birthday={birthday} milestones={milestones} lifeExpectancy={lifeExpectancy} />
 
         <Text style={{ fontSize: 13, color: "#6E6E70", textAlign: "center", fontFamily: "Cormorant Garamond" }}>
           {t("life.weeksRemaining", { count: remaining.toLocaleString() })}

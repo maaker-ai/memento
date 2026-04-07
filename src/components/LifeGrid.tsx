@@ -1,16 +1,17 @@
 import React, { useMemo } from "react";
 import { View, Dimensions } from "react-native";
 import Svg, { Rect, Circle } from "react-native-svg";
-import { COLORS, WEEKS_PER_YEAR, TOTAL_YEARS } from "../utils/constants";
+import { COLORS, WEEKS_PER_YEAR } from "../utils/constants";
 import { getWeeksLived, dateToWeekIndex } from "../utils/date";
 import { Milestone } from "../types";
 
 interface LifeGridProps {
   birthday: string;
   milestones: Milestone[];
+  lifeExpectancy?: number;
 }
 
-export default function LifeGrid({ birthday, milestones }: LifeGridProps) {
+export default function LifeGrid({ birthday, milestones, lifeExpectancy = 80 }: LifeGridProps) {
   const screenWidth = Dimensions.get("window").width;
   const gridWidth = screenWidth - 56; // match content padding 28*2
   const gap = 1;
@@ -23,7 +24,7 @@ export default function LifeGrid({ birthday, milestones }: LifeGridProps) {
     const map = new Map<number, Milestone>();
     milestones.forEach((m) => {
       const weekIdx = dateToWeekIndex(birthday, m.date);
-      if (weekIdx >= 0 && weekIdx < TOTAL_YEARS * WEEKS_PER_YEAR) {
+      if (weekIdx >= 0 && weekIdx < lifeExpectancy * WEEKS_PER_YEAR) {
         map.set(weekIdx, m);
       }
     });
@@ -31,11 +32,11 @@ export default function LifeGrid({ birthday, milestones }: LifeGridProps) {
   }, [birthday, milestones]);
 
   const svgWidth = gridWidth;
-  const svgHeight = TOTAL_YEARS * totalCellSize;
+  const svgHeight = lifeExpectancy * totalCellSize;
 
   const cells = useMemo(() => {
     const elements: React.ReactElement[] = [];
-    for (let year = 0; year < TOTAL_YEARS; year++) {
+    for (let year = 0; year < lifeExpectancy; year++) {
       for (let week = 0; week < WEEKS_PER_YEAR; week++) {
         const weekIndex = year * WEEKS_PER_YEAR + week;
         const x = week * totalCellSize;
