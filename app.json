@@ -15,7 +15,7 @@
       "infoPlist": {
         "UIRequiresFullScreen": true
       },
-      "bundleIdentifier": "com.maruipp.Memento"
+      "bundleIdentifier": "ai.maaker.memento"
     },
     "android": {
       "adaptiveIcon": {
@@ -43,6 +43,12 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8f7076d6-6358-4886-a70c-f861eaa6415a"
+      }
+    }
   }
 }
