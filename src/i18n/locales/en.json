@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "tabs": {
+    "life": "LIFE",
+    "wisdom": "WISDOM",
+    "settings": "SETTINGS"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "lived",
+    "weeksRemaining": "{{count}} weeks remaining",
+    "loading": "Loading..."
+  },
+  "birthday": {
+    "title": "When were you born?",
+    "subtitle": "Your life in weeks. Every week counts.",
+    "startJourney": "Start Your Journey",
+    "year": "YEAR",
+    "month": "MONTH",
+    "day": "DAY",
+    "setBirthday": "Set your birthday",
+    "invalidDate": "Invalid Date",
+    "invalidDateMessage": "Please enter a valid date."
+  },
+  "wisdom": {
+    "authorPrefix": "\u2014",
+    "via": "via Memento"
+  },
+  "settings": {
+    "title": "Settings",
+    "birthday": "BIRTHDAY",
+    "lifeExpectancy": "LIFE EXPECTANCY",
+    "lifeExpectancyRange": "60 \u2014 100 years",
+    "years": "years",
+    "milestones": "MILESTONES",
+    "addMilestone": "+ Add Milestone",
+    "addMilestoneTitle": "Add Milestone",
+    "chooseMilestone": "Choose a milestone type:",
+    "enterDate": "Enter date (YYYY-MM-DD):",
+    "invalidDateFormat": "Please use YYYY-MM-DD format.",
+    "deleteMilestone": "Delete Milestone",
+    "deleteMilestoneConfirm": "Are you sure you want to delete \"{{name}}\"?",
+    "notifications": "NOTIFICATIONS",
+    "dailyQuote": "Daily Quote",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "proActiveSubtitle": "Lifetime access \u00B7 Thank you for your support",
+    "upgradeToPro": "Upgrade to Pro",
+    "upgradeSubtitle": "One-time purchase \u00B7 Unlock everything",
+    "restorePurchase": "Restore Purchase",
+    "restoring": "Restoring...",
+    "about": "About",
+    "cancel": "Cancel",
+    "save": "Save",
+    "version": "Memento v1.0.0"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "Unlock the full experience",
+    "featureFavorites": "Save favorite quotes",
+    "featureMilestones": "Unlimited milestones",
+    "featureSupport": "Support development",
+    "unlockFor": "Unlock for {{price}}",
+    "unlockDefault": "Unlock for $3.99",
+    "restorePurchase": "Restore Purchase",
+    "restoring": "Restoring...",
+    "purchaseFailed": "Purchase Failed",
+    "somethingWrong": "Something went wrong.",
+    "restored": "Restored",
+    "restoredMessage": "Your purchase has been restored.",
+    "noPurchase": "No Purchase Found",
+    "noPurchaseMessage": "We couldn't find any previous purchases.",
+    "error": "Error",
+    "failedRestore": "Failed to restore purchases.",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "Graduation",
+    "firstJob": "First Job",
+    "marriage": "Marriage",
+    "firstChild": "First Child",
+    "buyHouse": "Buy a House",
+    "travelAbroad": "Travel Abroad",
+    "startBusiness": "Start Business",
+    "retirement": "Retirement",
+    "learnToDrive": "Learn to Drive",
+    "firstPet": "First Pet",
+    "publishedWork": "Published Work",
+    "marathon": "Marathon"
+  },
+  "alerts": {
+    "restored": "Restored",
+    "restoredMessage": "Your Pro purchase has been restored.",
+    "noPurchase": "No Purchase Found",
+    "noPurchaseMessage": "We couldn't find any previous purchases.",
+    "error": "Error",
+    "failedRestore": "Failed to restore purchases."
+  }
+}

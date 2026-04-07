@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "Abbrechen",
+    "delete": "Löschen"
+  },
+  "tabs": {
+    "life": "LEBEN",
+    "wisdom": "WEISHEIT",
+    "settings": "EINSTELLUNGEN"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "gelebt",
+    "weeksRemaining": "{{count}} Wochen verbleibend",
+    "loading": "Laden..."
+  },
+  "birthday": {
+    "title": "Wann bist du geboren?",
+    "subtitle": "Dein Leben in Wochen. Jede Woche zaehlt.",
+    "startJourney": "Starte deine Reise",
+    "year": "JAHR",
+    "month": "MONAT",
+    "day": "TAG",
+    "setBirthday": "Geburtstag festlegen",
+    "invalidDate": "Ungültiges Datum",
+    "invalidDateMessage": "Bitte gib ein gültiges Datum ein."
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "via Memento"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "birthday": "GEBURTSTAG",
+    "lifeExpectancy": "LEBENSERWARTUNG",
+    "lifeExpectancyRange": "60 — 100 Jahre",
+    "years": "Jahre",
+    "milestones": "MEILENSTEINE",
+    "addMilestone": "+ Meilenstein hinzufügen",
+    "addMilestoneTitle": "Meilenstein hinzufügen",
+    "chooseMilestone": "Wähle einen Meilensteintyp:",
+    "enterDate": "Datum eingeben (JJJJ-MM-TT):",
+    "invalidDateFormat": "Bitte JJJJ-MM-TT Format verwenden.",
+    "deleteMilestone": "Meilenstein löschen",
+    "deleteMilestoneConfirm": "Möchtest du \"{{name}}\" wirklich löschen?",
+    "notifications": "BENACHRICHTIGUNGEN",
+    "dailyQuote": "Tägliches Zitat",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "Auf Pro upgraden",
+    "restorePurchase": "Kauf wiederherstellen",
+    "restoring": "Wiederherstellen...",
+    "about": "Über",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "Lebenslanger Zugang · Vielen Dank",
+    "upgradeSubtitle": "Einmalkauf · Alles freischalten"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "Erlebe die volle Erfahrung",
+    "featureFavorites": "Lieblingszitate speichern",
+    "featureMilestones": "Unbegrenzte Meilensteine",
+    "featureSupport": "Entwicklung unterstuetzen",
+    "unlockFor": "Für {{price}} freischalten",
+    "unlockDefault": "Für 3,99 $ freischalten",
+    "restorePurchase": "Kauf wiederherstellen",
+    "restoring": "Wiederherstellen...",
+    "purchaseFailed": "Kauf fehlgeschlagen",
+    "somethingWrong": "Etwas ist schiefgelaufen.",
+    "restored": "Wiederhergestellt",
+    "restoredMessage": "Dein Kauf wurde wiederhergestellt.",
+    "noPurchase": "Kein Kauf gefunden",
+    "noPurchaseMessage": "Wir konnten keine früheren Käufe finden.",
+    "error": "Fehler",
+    "failedRestore": "Kauf konnte nicht wiederhergestellt werden.",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "Abschluss",
+    "firstJob": "Erster Job",
+    "marriage": "Hochzeit",
+    "firstChild": "Erstes Kind",
+    "buyHouse": "Hauskauf",
+    "travelAbroad": "Auslandsreise",
+    "startBusiness": "Unternehmensgründung",
+    "retirement": "Ruhestand",
+    "learnToDrive": "Führerschein",
+    "firstPet": "Erstes Haustier",
+    "publishedWork": "Veröffentlichtes Werk",
+    "marathon": "Marathon"
+  },
+  "alerts": {
+    "restored": "Wiederhergestellt",
+    "restoredMessage": "Dein Pro-Kauf wurde wiederhergestellt.",
+    "noPurchase": "Kein Kauf gefunden",
+    "noPurchaseMessage": "Wir konnten keine früheren Käufe finden.",
+    "error": "Fehler",
+    "failedRestore": "Kauf konnte nicht wiederhergestellt werden."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "إلغاء",
+    "delete": "حذف"
+  },
+  "tabs": {
+    "life": "الحياة",
+    "wisdom": "الحكمة",
+    "settings": "الإعدادات"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "عاشها",
+    "weeksRemaining": "{{count}} أسبوع متبقي",
+    "loading": "جارٍ التحميل..."
+  },
+  "birthday": {
+    "title": "متى وُلدت؟",
+    "subtitle": "حياتك بالأسابيع. كل أسبوع مهم.",
+    "startJourney": "ابدأ رحلتك",
+    "year": "السنة",
+    "month": "الشهر",
+    "day": "اليوم",
+    "setBirthday": "حدد تاريخ ميلادك",
+    "invalidDate": "تاريخ غير صالح",
+    "invalidDateMessage": "يرجى إدخال تاريخ صالح."
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "عبر Memento"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "birthday": "تاريخ الميلاد",
+    "lifeExpectancy": "متوسط العمر المتوقع",
+    "lifeExpectancyRange": "60 — 100 سنة",
+    "years": "سنة",
+    "milestones": "المعالم",
+    "addMilestone": "+ إضافة معلم",
+    "addMilestoneTitle": "إضافة معلم",
+    "chooseMilestone": "اختر نوع المعلم:",
+    "enterDate": "أدخل التاريخ (YYYY-MM-DD):",
+    "invalidDateFormat": "يرجى استخدام صيغة YYYY-MM-DD.",
+    "deleteMilestone": "حذف المعلم",
+    "deleteMilestoneConfirm": "هل أنت متأكد من حذف \"{{name}}\"؟",
+    "notifications": "الإشعارات",
+    "dailyQuote": "اقتباس اليوم",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "الترقية إلى Pro",
+    "restorePurchase": "استعادة الشراء",
+    "restoring": "جارٍ الاستعادة...",
+    "about": "حول التطبيق",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "وصول مدى الحياة · شكرا لدعمك",
+    "upgradeSubtitle": "شراء لمرة واحدة · فتح كل شيء"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "افتح التجربة الكاملة",
+    "featureFavorites": "احفظ اقتباساتك المفضلة",
+    "featureMilestones": "معالم غير محدودة",
+    "featureSupport": "دعم التطوير",
+    "unlockFor": "فتح بـ {{price}}",
+    "unlockDefault": "فتح بـ $3.99",
+    "restorePurchase": "استعادة الشراء",
+    "restoring": "جارٍ الاستعادة...",
+    "purchaseFailed": "فشل الشراء",
+    "somethingWrong": "حدث خطأ ما.",
+    "restored": "تم الاستعادة",
+    "restoredMessage": "تم استعادة عملية الشراء.",
+    "noPurchase": "لا توجد عمليات شراء",
+    "noPurchaseMessage": "لم نتمكن من العثور على عمليات شراء سابقة.",
+    "error": "خطأ",
+    "failedRestore": "فشل استعادة عمليات الشراء.",
+    "ok": "حسناً"
+  },
+  "milestones": {
+    "graduation": "التخرج",
+    "firstJob": "أول وظيفة",
+    "marriage": "الزواج",
+    "firstChild": "الطفل الأول",
+    "buyHouse": "شراء منزل",
+    "travelAbroad": "السفر للخارج",
+    "startBusiness": "بدء مشروع",
+    "retirement": "التقاعد",
+    "learnToDrive": "تعلم القيادة",
+    "firstPet": "أول حيوان أليف",
+    "publishedWork": "عمل منشور",
+    "marathon": "ماراثون"
+  },
+  "alerts": {
+    "restored": "تم الاستعادة",
+    "restoredMessage": "تم استعادة شراء Pro.",
+    "noPurchase": "لا توجد عمليات شراء",
+    "noPurchaseMessage": "لم نتمكن من العثور على عمليات شراء سابقة.",
+    "error": "خطأ",
+    "failedRestore": "فشل استعادة عمليات الشراء."
+  }
+}

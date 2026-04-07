@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "キャンセル",
+    "delete": "削除"
+  },
+  "tabs": {
+    "life": "人生",
+    "wisdom": "名言",
+    "settings": "設定"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "経過",
+    "weeksRemaining": "残り {{count}} 週",
+    "loading": "読み込み中..."
+  },
+  "birthday": {
+    "title": "誕生日はいつですか？",
+    "subtitle": "週で見るあなたの人生。一週一週が大切。",
+    "startJourney": "旅を始める",
+    "year": "年",
+    "month": "月",
+    "day": "日",
+    "setBirthday": "誕生日を設定",
+    "invalidDate": "無効な日付",
+    "invalidDateMessage": "有効な日付を入力してください。"
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "Memento より"
+  },
+  "settings": {
+    "title": "設定",
+    "birthday": "誕生日",
+    "lifeExpectancy": "平均寿命",
+    "lifeExpectancyRange": "60 — 100 歳",
+    "years": "歳",
+    "milestones": "マイルストーン",
+    "addMilestone": "+ マイルストーンを追加",
+    "addMilestoneTitle": "マイルストーンを追加",
+    "chooseMilestone": "マイルストーンの種類を選択：",
+    "enterDate": "日付を入力 (YYYY-MM-DD)：",
+    "invalidDateFormat": "YYYY-MM-DD 形式で入力してください。",
+    "deleteMilestone": "マイルストーンを削除",
+    "deleteMilestoneConfirm": "「{{name}}」を削除しますか？",
+    "notifications": "通知",
+    "dailyQuote": "今日の名言",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "Pro にアップグレード",
+    "restorePurchase": "購入を復元",
+    "restoring": "復元中...",
+    "about": "アプリについて",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "永久利用 · ご支援ありがとうございます",
+    "upgradeSubtitle": "買い切り · すべてを解放"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "すべての機能を解放",
+    "featureFavorites": "お気に入りの名言を保存",
+    "featureMilestones": "無制限のマイルストーン",
+    "featureSupport": "開発を支援",
+    "unlockFor": "{{price}} で解放",
+    "unlockDefault": "$3.99 で解放",
+    "restorePurchase": "購入を復元",
+    "restoring": "復元中...",
+    "purchaseFailed": "購入に失敗",
+    "somethingWrong": "問題が発生しました。",
+    "restored": "復元完了",
+    "restoredMessage": "購入が復元されました。",
+    "noPurchase": "購入記録なし",
+    "noPurchaseMessage": "以前の購入記録が見つかりませんでした。",
+    "error": "エラー",
+    "failedRestore": "購入の復元に失敗しました。",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "卒業",
+    "firstJob": "初めての仕事",
+    "marriage": "結婚",
+    "firstChild": "第一子誕生",
+    "buyHouse": "マイホーム購入",
+    "travelAbroad": "海外旅行",
+    "startBusiness": "起業",
+    "retirement": "退職",
+    "learnToDrive": "運転免許取得",
+    "firstPet": "初めてのペット",
+    "publishedWork": "作品出版",
+    "marathon": "マラソン"
+  },
+  "alerts": {
+    "restored": "復元完了",
+    "restoredMessage": "Pro の購入が復元されました。",
+    "noPurchase": "購入記録なし",
+    "noPurchaseMessage": "以前の購入記録が見つかりませんでした。",
+    "error": "エラー",
+    "failedRestore": "購入の復元に失敗しました。"
+  }
+}

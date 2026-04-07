@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "Annulla",
+    "delete": "Elimina"
+  },
+  "tabs": {
+    "life": "VITA",
+    "wisdom": "SAGGEZZA",
+    "settings": "IMPOSTAZIONI"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "vissuto",
+    "weeksRemaining": "{{count}} settimane rimanenti",
+    "loading": "Caricamento..."
+  },
+  "birthday": {
+    "title": "Quando sei nato/a?",
+    "subtitle": "La tua vita in settimane. Ogni settimana conta.",
+    "startJourney": "Inizia il tuo viaggio",
+    "year": "ANNO",
+    "month": "MESE",
+    "day": "GIORNO",
+    "setBirthday": "Imposta la tua data di nascita",
+    "invalidDate": "Data non valida",
+    "invalidDateMessage": "Inserisci una data valida."
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "via Memento"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "birthday": "DATA DI NASCITA",
+    "lifeExpectancy": "ASPETTATIVA DI VITA",
+    "lifeExpectancyRange": "60 — 100 anni",
+    "years": "anni",
+    "milestones": "TRAGUARDI",
+    "addMilestone": "+ Aggiungi traguardo",
+    "addMilestoneTitle": "Aggiungi traguardo",
+    "chooseMilestone": "Scegli un tipo di traguardo:",
+    "enterDate": "Inserisci la data (AAAA-MM-GG):",
+    "invalidDateFormat": "Usa il formato AAAA-MM-GG.",
+    "deleteMilestone": "Elimina traguardo",
+    "deleteMilestoneConfirm": "Sei sicuro di voler eliminare \"{{name}}\"?",
+    "notifications": "NOTIFICHE",
+    "dailyQuote": "Citazione del giorno",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "Passa a Pro",
+    "restorePurchase": "Ripristina acquisto",
+    "restoring": "Ripristino...",
+    "about": "Info",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "Accesso a vita · Grazie per il supporto",
+    "upgradeSubtitle": "Acquisto unico · Sblocca tutto"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "Sblocca l'esperienza completa",
+    "featureFavorites": "Salva le tue citazioni preferite",
+    "featureMilestones": "Traguardi illimitati",
+    "featureSupport": "Supporta lo sviluppo",
+    "unlockFor": "Sblocca per {{price}}",
+    "unlockDefault": "Sblocca per $3,99",
+    "restorePurchase": "Ripristina acquisto",
+    "restoring": "Ripristino...",
+    "purchaseFailed": "Acquisto fallito",
+    "somethingWrong": "Qualcosa è andato storto.",
+    "restored": "Ripristinato",
+    "restoredMessage": "Il tuo acquisto è stato ripristinato.",
+    "noPurchase": "Nessun acquisto trovato",
+    "noPurchaseMessage": "Non abbiamo trovato acquisti precedenti.",
+    "error": "Errore",
+    "failedRestore": "Impossibile ripristinare l'acquisto.",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "Laurea",
+    "firstJob": "Primo lavoro",
+    "marriage": "Matrimonio",
+    "firstChild": "Primo figlio",
+    "buyHouse": "Acquisto casa",
+    "travelAbroad": "Viaggio all'estero",
+    "startBusiness": "Avvio attività",
+    "retirement": "Pensionamento",
+    "learnToDrive": "Patente di guida",
+    "firstPet": "Primo animale",
+    "publishedWork": "Opera pubblicata",
+    "marathon": "Maratona"
+  },
+  "alerts": {
+    "restored": "Ripristinato",
+    "restoredMessage": "Il tuo acquisto Pro è stato ripristinato.",
+    "noPurchase": "Nessun acquisto trovato",
+    "noPurchaseMessage": "Non abbiamo trovato acquisti precedenti.",
+    "error": "Errore",
+    "failedRestore": "Impossibile ripristinare l'acquisto."
+  }
+}

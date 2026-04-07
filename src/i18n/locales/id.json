@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "Batal",
+    "delete": "Hapus"
+  },
+  "tabs": {
+    "life": "KEHIDUPAN",
+    "wisdom": "KEBIJAKSANAAN",
+    "settings": "PENGATURAN"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "telah dijalani",
+    "weeksRemaining": "{{count}} minggu tersisa",
+    "loading": "Memuat..."
+  },
+  "birthday": {
+    "title": "Kapan kamu lahir?",
+    "subtitle": "Hidupmu dalam minggu. Setiap minggu berarti.",
+    "startJourney": "Mulai Perjalananmu",
+    "year": "TAHUN",
+    "month": "BULAN",
+    "day": "HARI",
+    "setBirthday": "Atur tanggal lahir",
+    "invalidDate": "Tanggal Tidak Valid",
+    "invalidDateMessage": "Masukkan tanggal yang valid."
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "via Memento"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "birthday": "TANGGAL LAHIR",
+    "lifeExpectancy": "HARAPAN HIDUP",
+    "lifeExpectancyRange": "60 — 100 tahun",
+    "years": "tahun",
+    "milestones": "TONGGAK",
+    "addMilestone": "+ Tambah Tonggak",
+    "addMilestoneTitle": "Tambah Tonggak",
+    "chooseMilestone": "Pilih jenis tonggak:",
+    "enterDate": "Masukkan tanggal (YYYY-MM-DD):",
+    "invalidDateFormat": "Gunakan format YYYY-MM-DD.",
+    "deleteMilestone": "Hapus Tonggak",
+    "deleteMilestoneConfirm": "Yakin ingin menghapus \"{{name}}\"?",
+    "notifications": "NOTIFIKASI",
+    "dailyQuote": "Kutipan Harian",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "Upgrade ke Pro",
+    "restorePurchase": "Pulihkan Pembelian",
+    "restoring": "Memulihkan...",
+    "about": "Tentang",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "Akses seumur hidup · Terima kasih atas dukunganmu",
+    "upgradeSubtitle": "Pembelian sekali · Buka semua"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "Buka pengalaman lengkap",
+    "featureFavorites": "Simpan kutipan favoritmu",
+    "featureMilestones": "Tonggak tak terbatas",
+    "featureSupport": "Dukung pengembangan",
+    "unlockFor": "Buka dengan {{price}}",
+    "unlockDefault": "Buka dengan $3,99",
+    "restorePurchase": "Pulihkan Pembelian",
+    "restoring": "Memulihkan...",
+    "purchaseFailed": "Pembelian Gagal",
+    "somethingWrong": "Terjadi kesalahan.",
+    "restored": "Dipulihkan",
+    "restoredMessage": "Pembelianmu telah dipulihkan.",
+    "noPurchase": "Tidak Ada Pembelian",
+    "noPurchaseMessage": "Kami tidak menemukan pembelian sebelumnya.",
+    "error": "Kesalahan",
+    "failedRestore": "Gagal memulihkan pembelian.",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "Wisuda",
+    "firstJob": "Pekerjaan Pertama",
+    "marriage": "Pernikahan",
+    "firstChild": "Anak Pertama",
+    "buyHouse": "Beli Rumah",
+    "travelAbroad": "Perjalanan ke Luar Negeri",
+    "startBusiness": "Memulai Bisnis",
+    "retirement": "Pensiun",
+    "learnToDrive": "Belajar Mengemudi",
+    "firstPet": "Hewan Peliharaan Pertama",
+    "publishedWork": "Karya Diterbitkan",
+    "marathon": "Maraton"
+  },
+  "alerts": {
+    "restored": "Dipulihkan",
+    "restoredMessage": "Pembelian Pro telah dipulihkan.",
+    "noPurchase": "Tidak Ada Pembelian",
+    "noPurchaseMessage": "Kami tidak menemukan pembelian sebelumnya.",
+    "error": "Kesalahan",
+    "failedRestore": "Gagal memulihkan pembelian."
+  }
+}

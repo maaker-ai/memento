@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "取消",
+    "delete": "刪除"
+  },
+  "tabs": {
+    "life": "人生",
+    "wisdom": "箴言",
+    "settings": "設定"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "已度過",
+    "weeksRemaining": "還剩 {{count}} 週",
+    "loading": "載入中..."
+  },
+  "birthday": {
+    "title": "你的生日是？",
+    "subtitle": "你的人生，以週為單位。每一週都算數。",
+    "startJourney": "開始你的旅程",
+    "year": "年",
+    "month": "月",
+    "day": "日",
+    "setBirthday": "設定你的生日",
+    "invalidDate": "日期無效",
+    "invalidDateMessage": "請輸入有效的日期。"
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "來自 Memento"
+  },
+  "settings": {
+    "title": "設定",
+    "birthday": "生日",
+    "lifeExpectancy": "預期壽命",
+    "lifeExpectancyRange": "60 — 100 歲",
+    "years": "歲",
+    "milestones": "人生里程碑",
+    "addMilestone": "+ 新增里程碑",
+    "addMilestoneTitle": "新增里程碑",
+    "chooseMilestone": "選擇里程碑類型：",
+    "enterDate": "輸入日期 (YYYY-MM-DD)：",
+    "invalidDateFormat": "請使用 YYYY-MM-DD 格式。",
+    "deleteMilestone": "刪除里程碑",
+    "deleteMilestoneConfirm": "確定要刪除「{{name}}」嗎？",
+    "notifications": "通知",
+    "dailyQuote": "每日箴言",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "升級到 Pro",
+    "restorePurchase": "恢復購買",
+    "restoring": "恢復中...",
+    "about": "關於",
+    "cancel": "取消",
+    "save": "儲存",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "終身使用 · 感謝你的支持",
+    "upgradeSubtitle": "一次購買 · 解鎖全部功能"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "解鎖完整體驗",
+    "featureFavorites": "收藏喜歡的名言",
+    "featureMilestones": "無限里程碑",
+    "featureSupport": "支持開發",
+    "unlockFor": "以 {{price}} 解鎖",
+    "unlockDefault": "以 $3.99 解鎖",
+    "restorePurchase": "恢復購買",
+    "restoring": "恢復中...",
+    "purchaseFailed": "購買失敗",
+    "somethingWrong": "出了點問題。",
+    "restored": "已恢復",
+    "restoredMessage": "你的購買已恢復。",
+    "noPurchase": "未找到購買記錄",
+    "noPurchaseMessage": "未找到之前的購買記錄。",
+    "error": "錯誤",
+    "failedRestore": "恢復購買失敗。",
+    "ok": "好"
+  },
+  "milestones": {
+    "graduation": "畢業",
+    "firstJob": "第一份工作",
+    "marriage": "結婚",
+    "firstChild": "第一個孩子",
+    "buyHouse": "買房",
+    "travelAbroad": "出國旅行",
+    "startBusiness": "創業",
+    "retirement": "退休",
+    "learnToDrive": "學開車",
+    "firstPet": "第一隻寵物",
+    "publishedWork": "出版作品",
+    "marathon": "馬拉松"
+  },
+  "alerts": {
+    "restored": "已恢復",
+    "restoredMessage": "你的 Pro 購買已恢復。",
+    "noPurchase": "未找到購買記錄",
+    "noPurchaseMessage": "未找到之前的購買記錄。",
+    "error": "錯誤",
+    "failedRestore": "恢復購買失敗。"
+  }
+}

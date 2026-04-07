@@ -1,0 +1,102 @@
+{
+  "common": {
+    "cancel": "Отмена",
+    "delete": "Удалить"
+  },
+  "tabs": {
+    "life": "ЖИЗНЬ",
+    "wisdom": "МУДРОСТЬ",
+    "settings": "НАСТРОЙКИ"
+  },
+  "life": {
+    "mementoMori": "MEMENTO MORI",
+    "lived": "прожито",
+    "weeksRemaining": "осталось {{count}} недель",
+    "loading": "Загрузка..."
+  },
+  "birthday": {
+    "title": "Когда вы родились?",
+    "subtitle": "Ваша жизнь в неделях. Каждая неделя на счету.",
+    "startJourney": "Начните свой путь",
+    "year": "ГОД",
+    "month": "МЕСЯЦ",
+    "day": "ДЕНЬ",
+    "setBirthday": "Указать дату рождения",
+    "invalidDate": "Неверная дата",
+    "invalidDateMessage": "Пожалуйста, введите корректную дату."
+  },
+  "wisdom": {
+    "authorPrefix": "—",
+    "via": "через Memento"
+  },
+  "settings": {
+    "title": "Настройки",
+    "birthday": "ДАТА РОЖДЕНИЯ",
+    "lifeExpectancy": "ОЖИДАЕМАЯ ПРОДОЛЖИТЕЛЬНОСТЬ ЖИЗНИ",
+    "lifeExpectancyRange": "60 — 100 лет",
+    "years": "лет",
+    "milestones": "ВЕХИ",
+    "addMilestone": "+ Добавить веху",
+    "addMilestoneTitle": "Добавить веху",
+    "chooseMilestone": "Выберите тип вехи:",
+    "enterDate": "Введите дату (ГГГГ-ММ-ДД):",
+    "invalidDateFormat": "Используйте формат ГГГГ-ММ-ДД.",
+    "deleteMilestone": "Удалить веху",
+    "deleteMilestoneConfirm": "Вы уверены, что хотите удалить \"{{name}}\"?",
+    "notifications": "УВЕДОМЛЕНИЯ",
+    "dailyQuote": "Цитата дня",
+    "pro": "PRO",
+    "proActive": "Memento Pro",
+    "upgradeToPro": "Перейти на Pro",
+    "restorePurchase": "Восстановить покупку",
+    "restoring": "Восстановление...",
+    "about": "О приложении",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "version": "Memento v1.0.0",
+    "proActiveSubtitle": "Пожизненный доступ · Спасибо за поддержку",
+    "upgradeSubtitle": "Разовая покупка · Разблокировать все"
+  },
+  "paywall": {
+    "title": "Memento Pro",
+    "subtitle": "Откройте полный опыт",
+    "featureFavorites": "Сохранение любимых цитат",
+    "featureMilestones": "Неограниченные вехи",
+    "featureSupport": "Поддержать разработку",
+    "unlockFor": "Разблокировать за {{price}}",
+    "unlockDefault": "Разблокировать за $3.99",
+    "restorePurchase": "Восстановить покупку",
+    "restoring": "Восстановление...",
+    "purchaseFailed": "Покупка не удалась",
+    "somethingWrong": "Что-то пошло не так.",
+    "restored": "Восстановлено",
+    "restoredMessage": "Ваша покупка восстановлена.",
+    "noPurchase": "Покупка не найдена",
+    "noPurchaseMessage": "Мы не нашли предыдущих покупок.",
+    "error": "Ошибка",
+    "failedRestore": "Не удалось восстановить покупку.",
+    "ok": "OK"
+  },
+  "milestones": {
+    "graduation": "Выпуск",
+    "firstJob": "Первая работа",
+    "marriage": "Свадьба",
+    "firstChild": "Первый ребёнок",
+    "buyHouse": "Покупка дома",
+    "travelAbroad": "Поездка за границу",
+    "startBusiness": "Свой бизнес",
+    "retirement": "Выход на пенсию",
+    "learnToDrive": "Водительские права",
+    "firstPet": "Первый питомец",
+    "publishedWork": "Публикация",
+    "marathon": "Марафон"
+  },
+  "alerts": {
+    "restored": "Восстановлено",
+    "restoredMessage": "Ваша покупка Pro восстановлена.",
+    "noPurchase": "Покупка не найдена",
+    "noPurchaseMessage": "Мы не нашли предыдущих покупок.",
+    "error": "Ошибка",
+    "failedRestore": "Не удалось восстановить покупку."
+  }
+}
