@@ -4,17 +4,19 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
-  TextInput,
   Alert,
   ActionSheetIOS,
   Platform,
   Switch,
+  Pressable,
 } from "react-native";
 import { useFocusEffect, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTranslation } from "react-i18next";
+import i18n from "../../src/i18n";
 import { LinearGradient } from "expo-linear-gradient";
 import Slider from "@react-native-community/slider";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import Svg, { Path, Rect } from "react-native-svg";
 import {
   loadSettings,
@@ -132,14 +134,15 @@ export default function SettingsScreen() {
   const { t } = useTranslation();
   const [birthday, setBirthday] = useState<string | null>(null);
   const [milestones, setMilestones] = useState<Milestone[]>([]);
-  const [editingBirthday, setEditingBirthday] = useState(false);
-  const [birthYear, setBirthYear] = useState("");
-  const [birthMonth, setBirthMonth] = useState("");
-  const [birthDay, setBirthDay] = useState("");
+  const [showBirthdayPicker, setShowBirthdayPicker] = useState(false);
+  const [birthdayPickerDate, setBirthdayPickerDate] = useState(new Date(1992, 0, 1));
   const [lifeExpectancy, setLifeExpectancy] = useState(80);
   const [restoringPurchase, setRestoringPurchase] = useState(false);
   const [isPro, setIsPro] = useState(false);
   const [dailyQuoteEnabled, setDailyQuoteEnabled] = useState(false);
+  const [pendingMilestoneTemplate, setPendingMilestoneTemplate] = useState<(typeof MILESTONE_TEMPLATES)[0] | null>(null);
+  const [showMilestoneDatePicker, setShowMilestoneDatePicker] = useState(false);
+  const [milestonePickerDate, setMilestonePickerDate] = useState(new Date());
 
   useFocusEffect(
     useCallback(() => {
@@ -149,70 +152,86 @@ export default function SettingsScreen() {
         setLifeExpectancy(settings.lifeExpectancy ?? 80);
         setDailyQuoteEnabled(settings.dailyQuoteEnabled ?? false);
         if (settings.birthday) {
-          const parts = settings.birthday.split("-");
-          setBirthYear(parts[0]);
-          setBirthMonth(parts[1]);
-          setBirthDay(parts[2]);
+          const d = new Date(settings.birthday + "T00:00:00");
+          if (!isNaN(d.getTime())) {
+            setBirthdayPickerDate(d);
+          }
         }
       });
       checkProStatus().then(setIsPro).catch(() => {});
     }, [])
   );
 
+  // Map i18n language to BCP-47 locale for DateTimePicker
+  const getPickerLocale = (): string => {
+    const lang = i18n.language;
+    const localeMap: Record<string, string> = {
+      "zh-Hans": "zh-CN",
+      "zh-Hant": "zh-TW",
+      ja: "ja-JP",
+      ko: "ko-KR",
+      de: "de-DE",
+      fr: "fr-FR",
+      es: "es-ES",
+      ru: "ru-RU",
+      it: "it-IT",
+      ar: "ar-SA",
+      id: "id-ID",
+      en: "en-US",
+    };
+    return localeMap[lang] || "en-US";
+  };
+
   const formatBirthday = (dateStr: string) => {
     const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString("en-US", {
+    const locale = getPickerLocale();
+    return d.toLocaleDateString(locale, {
       month: "long",
       day: "numeric",
       year: "numeric",
     });
   };
 
-  const handleSaveBirthday = async () => {
-    const y = parseInt(birthYear);
-    const m = parseInt(birthMonth);
-    const d = parseInt(birthDay);
-    if (
-      isNaN(y) ||
-      isNaN(m) ||
-      isNaN(d) ||
-      y < 1920 ||
-      m < 1 ||
-      m > 12 ||
-      d < 1 ||
-      d > 31
-    ) {
-      Alert.alert(t("birthday.invalidDate"), t("birthday.invalidDateMessage"));
-      return;
+  const handleBirthdayPickerChange = async (_event: any, selectedDate?: Date) => {
+    if (Platform.OS === "android") {
+      setShowBirthdayPicker(false);
     }
-    const dateStr = `${birthYear}-${birthMonth.padStart(2, "0")}-${birthDay.padStart(2, "0")}`;
-    await saveBirthday(dateStr);
-    setBirthday(dateStr);
-    setEditingBirthday(false);
+    if (selectedDate) {
+      setBirthdayPickerDate(selectedDate);
+      const y = selectedDate.getFullYear();
+      const m = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const d = String(selectedDate.getDate()).padStart(2, "0");
+      const dateStr = `${y}-${m}-${d}`;
+      await saveBirthday(dateStr);
+      setBirthday(dateStr);
+    }
   };
 
   const handleAddMilestone = (template: (typeof MILESTONE_TEMPLATES)[0]) => {
-    if (Platform.OS === "ios") {
-      Alert.prompt(
-        `${template.emoji} ${template.name}`,
-        t("settings.enterDate"),
-        async (dateStr) => {
-          if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
-            Alert.alert(t("birthday.invalidDate"), t("settings.invalidDateFormat"));
-            return;
-          }
-          const newMilestone: Milestone = {
-            id: Date.now().toString(),
-            name: template.name,
-            emoji: template.emoji,
-            date: dateStr,
-          };
-          const updated = [...milestones, newMilestone];
-          await saveMilestones(updated);
-          setMilestones(updated);
-        },
-        "plain-text"
-      );
+    setPendingMilestoneTemplate(template);
+    setMilestonePickerDate(new Date());
+    setShowMilestoneDatePicker(true);
+  };
+
+  const handleMilestoneDateChange = async (_event: any, selectedDate?: Date) => {
+    if (Platform.OS === "android") {
+      setShowMilestoneDatePicker(false);
+    }
+    if (selectedDate && pendingMilestoneTemplate) {
+      setMilestonePickerDate(selectedDate);
+      const y = selectedDate.getFullYear();
+      const m = String(selectedDate.getMonth() + 1).padStart(2, "0");
+      const d = String(selectedDate.getDate()).padStart(2, "0");
+      const dateStr = `${y}-${m}-${d}`;
+      const newMilestone: Milestone = {
+        id: Date.now().toString(),
+        name: pendingMilestoneTemplate.name,
+        emoji: pendingMilestoneTemplate.emoji,
+        date: dateStr,
+      };
+      const updated = [...milestones, newMilestone];
+      await saveMilestones(updated);
+      setMilestones(updated);
     }
   };
 
@@ -309,147 +328,42 @@ export default function SettingsScreen() {
           >
             {t("settings.birthday")}
           </Text>
-          {!editingBirthday ? (
-            <TouchableOpacity
-              onPress={() => setEditingBirthday(true)}
-              style={{
-                backgroundColor: "#1A1A1A",
-                borderRadius: 12,
-                height: 52,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-between",
-                paddingHorizontal: 16,
-              }}
-            >
-              <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
-                {birthday ? formatBirthday(birthday) : t("birthday.setBirthday")}
-              </Text>
-              <CalendarIcon />
-            </TouchableOpacity>
-          ) : (
+          <TouchableOpacity
+            onPress={() => setShowBirthdayPicker(!showBirthdayPicker)}
+            style={{
+              backgroundColor: "#1A1A1A",
+              borderRadius: 12,
+              height: 52,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingHorizontal: 16,
+            }}
+          >
+            <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
+              {birthday ? formatBirthday(birthday) : t("birthday.setBirthday")}
+            </Text>
+            <CalendarIcon />
+          </TouchableOpacity>
+          {showBirthdayPicker && (
             <View
               style={{
                 backgroundColor: "#1A1A1A",
                 borderRadius: 12,
-                padding: 16,
-                gap: 12,
+                overflow: "hidden",
               }}
             >
-              <View style={{ flexDirection: "row", gap: 8 }}>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 10, color: "#6E6E70", textAlign: "center", marginBottom: 6, letterSpacing: 2, fontFamily: "Cormorant Garamond" }}>
-                    YYYY
-                  </Text>
-                  <TextInput
-                    style={{
-                      backgroundColor: COLORS.background,
-                      borderRadius: 8,
-                      paddingHorizontal: 12,
-                      paddingVertical: 12,
-                      fontSize: 20,
-                      color: "#E5E5E5",
-                      textAlign: "center",
-                      borderWidth: 1,
-                      borderColor: birthYear ? COLORS.milestone : "#2A2A2A",
-                    }}
-                    placeholder="1992"
-                    placeholderTextColor="#4A4A4A"
-                    keyboardType="number-pad"
-                    maxLength={4}
-                    value={birthYear}
-                    onChangeText={(text) => setBirthYear(text.replace(/[^0-9]/g, ""))}
-                    returnKeyType="next"
-                    autoCorrect={false}
-                  />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 10, color: "#6E6E70", textAlign: "center", marginBottom: 6, letterSpacing: 2, fontFamily: "Cormorant Garamond" }}>
-                    MM
-                  </Text>
-                  <TextInput
-                    style={{
-                      backgroundColor: COLORS.background,
-                      borderRadius: 8,
-                      paddingHorizontal: 12,
-                      paddingVertical: 12,
-                      fontSize: 20,
-                      color: "#E5E5E5",
-                      textAlign: "center",
-                      borderWidth: 1,
-                      borderColor: birthMonth ? COLORS.milestone : "#2A2A2A",
-                    }}
-                    placeholder="03"
-                    placeholderTextColor="#4A4A4A"
-                    keyboardType="number-pad"
-                    maxLength={2}
-                    value={birthMonth}
-                    onChangeText={(text) => setBirthMonth(text.replace(/[^0-9]/g, ""))}
-                    returnKeyType="next"
-                    autoCorrect={false}
-                  />
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 10, color: "#6E6E70", textAlign: "center", marginBottom: 6, letterSpacing: 2, fontFamily: "Cormorant Garamond" }}>
-                    DD
-                  </Text>
-                  <TextInput
-                    style={{
-                      backgroundColor: COLORS.background,
-                      borderRadius: 8,
-                      paddingHorizontal: 12,
-                      paddingVertical: 12,
-                      fontSize: 20,
-                      color: "#E5E5E5",
-                      textAlign: "center",
-                      borderWidth: 1,
-                      borderColor: birthDay ? COLORS.milestone : "#2A2A2A",
-                    }}
-                    placeholder="15"
-                    placeholderTextColor="#4A4A4A"
-                    keyboardType="number-pad"
-                    maxLength={2}
-                    value={birthDay}
-                    onChangeText={(text) => setBirthDay(text.replace(/[^0-9]/g, ""))}
-                    returnKeyType="done"
-                    onSubmitEditing={handleSaveBirthday}
-                    autoCorrect={false}
-                  />
-                </View>
-              </View>
-              <View style={{ flexDirection: "row", gap: 8 }}>
-                <TouchableOpacity
-                  onPress={() => setEditingBirthday(false)}
-                  style={{
-                    flex: 1,
-                    paddingVertical: 12,
-                    alignItems: "center",
-                    borderRadius: 8,
-                    borderWidth: 1,
-                    borderColor: "#2A2A2A",
-                  }}
-                >
-                  <Text style={{ color: "#6E6E70", fontFamily: "Cormorant Garamond", fontSize: 16 }}>
-                    {t("settings.cancel")}
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={handleSaveBirthday}
-                  style={{
-                    flex: 1,
-                    paddingVertical: 12,
-                    alignItems: "center",
-                    borderRadius: 8,
-                    backgroundColor: "#E5E5E5",
-                  }}
-                >
-                  <Text
-                    style={{ color: COLORS.background, fontFamily: "Cormorant Garamond", fontSize: 16 }}
-                  >
-                    {t("settings.save")}
-                  </Text>
-                </TouchableOpacity>
-              </View>
+              <DateTimePicker
+                value={birthdayPickerDate}
+                mode="date"
+                display="spinner"
+                onChange={handleBirthdayPickerChange}
+                maximumDate={new Date()}
+                minimumDate={new Date(1920, 0, 1)}
+                locale={getPickerLocale()}
+                textColor="#E5E5E5"
+                themeVariant="dark"
+              />
             </View>
           )}
         </View>
@@ -597,6 +511,73 @@ export default function SettingsScreen() {
               </Text>
             </TouchableOpacity>
           </View>
+          {showMilestoneDatePicker && pendingMilestoneTemplate && (
+            <View
+              style={{
+                backgroundColor: "#1A1A1A",
+                borderRadius: 12,
+                overflow: "hidden",
+                marginTop: 4,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: "#E5E5E5",
+                  fontFamily: "Cormorant Garamond",
+                  textAlign: "center",
+                  paddingTop: 12,
+                  paddingHorizontal: 16,
+                }}
+              >
+                {pendingMilestoneTemplate.emoji} {pendingMilestoneTemplate.name}
+              </Text>
+              <DateTimePicker
+                value={milestonePickerDate}
+                mode="date"
+                display="spinner"
+                onChange={(_event, date) => {
+                  if (date) setMilestonePickerDate(date);
+                }}
+                locale={getPickerLocale()}
+                textColor="#E5E5E5"
+                themeVariant="dark"
+              />
+              <View style={{ flexDirection: "row", borderTopWidth: 0.5, borderTopColor: "#2A2A2A" }}>
+                <TouchableOpacity
+                  onPress={() => {
+                    setShowMilestoneDatePicker(false);
+                    setPendingMilestoneTemplate(null);
+                  }}
+                  style={{
+                    flex: 1,
+                    paddingVertical: 12,
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontSize: 14, color: "#6E6E70", fontFamily: "Cormorant Garamond" }}>
+                    {t("common.cancel")}
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    handleMilestoneDateChange(null as any, milestonePickerDate);
+                    setShowMilestoneDatePicker(false);
+                    setPendingMilestoneTemplate(null);
+                  }}
+                  style={{
+                    flex: 1,
+                    paddingVertical: 12,
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ fontSize: 14, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
+                    {t("settings.save")}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
         </View>
 
         {/* Pro Status */}
@@ -639,35 +620,36 @@ export default function SettingsScreen() {
             </LinearGradient>
           ) : (
             /* Upgrade Button - gold gradient */
-            <TouchableOpacity
-              onPress={() => router.push("/paywall")}
-              style={{ overflow: "hidden", borderRadius: 12 }}
-            >
-              <LinearGradient
-                colors={["#D4A574", "#C49464", "#D4A574"]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                style={{
-                  height: 52,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  paddingHorizontal: 16,
-                  gap: 8,
-                  borderRadius: 12,
-                  borderWidth: 1,
-                  borderColor: "#D4A574",
-                }}
+            <View>
+              <Pressable
+                onPress={() => router.push("/paywall")}
               >
-                <StarIcon color="#0C0C0C" />
-                <Text style={{ fontSize: 15, color: "#0C0C0C", fontFamily: "Cormorant Garamond" }}>
-                  {t("settings.upgradeToPro")}
-                </Text>
-              </LinearGradient>
+                <LinearGradient
+                  colors={["#D4A574", "#C49464", "#D4A574"]}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 0 }}
+                  style={{
+                    height: 52,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingHorizontal: 16,
+                    gap: 8,
+                    borderRadius: 12,
+                    borderWidth: 1,
+                    borderColor: "#D4A574",
+                  }}
+                >
+                  <StarIcon color="#0C0C0C" />
+                  <Text style={{ fontSize: 15, color: "#0C0C0C", fontFamily: "Cormorant Garamond" }}>
+                    {t("settings.upgradeToPro")}
+                  </Text>
+                </LinearGradient>
+              </Pressable>
               <Text style={{ fontSize: 11, color: "#6E6E70", textAlign: "center", marginTop: 6, fontFamily: "Cormorant Garamond" }}>
                 {t("settings.upgradeSubtitle")}
               </Text>
-            </TouchableOpacity>
+            </View>
           )}
         </View>
 
@@ -687,14 +669,15 @@ export default function SettingsScreen() {
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: 12,
-              height: 52,
+              minHeight: 52,
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
               paddingHorizontal: 16,
+              paddingVertical: 8,
             }}
           >
-            <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
+            <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond", flex: 1 }}>
               {t("settings.dailyQuote")}
             </Text>
             <Switch
@@ -702,6 +685,7 @@ export default function SettingsScreen() {
               onValueChange={handleToggleDailyQuote}
               trackColor={{ false: "#2A2A2A", true: COLORS.milestone }}
               thumbColor="#FFFFFF"
+              style={{ marginLeft: 12 }}
             />
           </View>
         </View>
