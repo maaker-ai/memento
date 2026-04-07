@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-04-07T16:50:00Z",
+  "icon": {
+    "path": "/Users/martin/OpenSource/Memento/assets/icon.png",
+    "format": "png",
+    "size": "1024x1024",
+    "validated": true,
+    "description": "Gold hourglass on dark background, Stoic theme"
+  },
+  "screenshots": {
+    "status": "missing_design_exports",
+    "note": "Design screenshots available in design/ directory. Real App UI captures needed for App Store submission. TestFlight beta can proceed without screenshots."
+  },
+  "privacy_policy": {
+    "local_path": "docs/privacy-policy.html",
+    "status": "ready_local",
+    "note": "Needs GitHub Pages deployment for public URL. TestFlight can proceed without public URL."
+  }
+}
