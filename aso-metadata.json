@@ -1,0 +1,189 @@
+{
+  "platform": "ios",
+  "locale": "en-US",
+  "title": "Memento - Life in Weeks",
+  "subtitle": "Stoic Wisdom & Life Grid",
+  "keywords": "mori,calendar,stoic,quote,death,clock,countdown,mindful,milestone,mortality,grid,wisdom,reflect",
+  "promotional_text": "See your life as a grid of weeks. Each filled square is a week you've lived. Pair ancient Stoic wisdom with a visual reminder to live fully. No account needed.",
+  "description": "How many weeks have you lived? How many remain?\n\nMemento turns your entire life into a single, powerful grid. Each square is one week — filled squares are weeks already behind you. The rest? That's what you have left.\n\nThis simple visualization hits harder than any productivity app. When you see your finite time laid out, priorities become clear.\n\nWHY MEMENTO WORKS\n\n• Life Grid — Your entire lifespan as a visual grid of weeks. One glance shows how far you've come and how much time remains.\n• Daily Stoic Quotes — 99 hand-picked quotes from Marcus Aurelius, Seneca, Epictetus, and other Stoic masters. A new one each day to ground your thinking.\n• Personal Milestones — Mark life's turning points on your grid. Graduation, first job, marriage, or any moment that matters to you.\n• Dark Minimal Design — Built for reflection, not distraction. Pure dark interface that lets the content speak.\n\nFEATURES\n\n• Adjustable life expectancy (60–100 years)\n• 12 preset milestone types or create your own\n• Save favorite quotes for quick access (Pro)\n• Unlimited milestones (Pro)\n• Share quotes with friends\n• Available in 12 languages\n• No account required — all data stays on your device\n• No ads, no tracking, no subscriptions\n\nMEMENTO PRO\n\nOne-time purchase of $3.99 unlocks saving favorite quotes and unlimited milestones. No subscriptions. No recurring charges. Pay once, yours forever.\n\nINSPIRED BY STOIC PHILOSOPHY\n\nThe ancient Stoics practiced \"memento mori\" — remembering death — not to be morbid, but to be fully alive. Marcus Aurelius wrote: \"You could leave life right now. Let that determine what you do and say and think.\"\n\nThis app brings that practice to your pocket.\n\nDownload Memento and start living with intention.",
+  "whats_new": "• Life grid now updates instantly when you change life expectancy\n• Improved milestone date picker with native controls\n• Smoother quote transitions\n• Fixed favorites page layout\n• Better accessibility across all screens",
+  "screenshot_captions": [
+    "Your entire life in one grid",
+    "Daily Stoic wisdom to live by",
+    "Mark the moments that matter",
+    "Unlock your full journey"
+  ],
+  "keyword_strategy": {
+    "primary": ["memento mori", "life in weeks", "stoic quotes"],
+    "secondary": ["life calendar", "death clock", "countdown", "mindful", "mortality"],
+    "long_tail": ["life grid visualization", "stoic daily wisdom", "memento mori app", "weeks remaining life", "life expectancy tracker"]
+  },
+  "competitor_insights": {
+    "analyzed_count": 12,
+    "keyword_gaps": [
+      "grid (most use 'calendar' — 'grid' differentiates)",
+      "milestone (no competitor emphasizes milestone marking)",
+      "no-subscription / one-time / buy-once (competitors mostly use subscriptions)",
+      "offline / no-account (privacy angle underused)"
+    ],
+    "positioning": "The only memento mori app that combines a life week grid with curated Stoic philosophy AND personal milestones — with a one-time price, no subscription, no account required."
+  },
+  "validation": {
+    "title_chars": 23,
+    "title_limit": 30,
+    "subtitle_chars": 24,
+    "subtitle_limit": 30,
+    "keywords_chars": 95,
+    "keywords_limit": 100,
+    "promo_text_chars": 159,
+    "promo_text_limit": 170,
+    "description_chars": 1727,
+    "description_limit": 4000,
+    "all_within_limits": true
+  },
+  "localizations": {
+    "zh-Hans": {
+      "title": "Memento - 生命周历",
+      "subtitle": "斯多葛智慧与人生网格",
+      "keywords": "人生,周历,生命,倒计时,斯多葛,名言,死亡,提醒,冥想,时间管理,里程碑,极简,可视化,感悟",
+      "promotional_text": "将人生化为一张周历网格。每个填满的格子代表已度过的一周。搭配古老斯多葛哲学箴言，提醒你活在当下。无需注册，数据纯本地存储。",
+      "description": "你已经活了多少周？还剩多少？\n\nMemento 将你的一生化为一张网格。每个方格代表一周——填满的是已经过去的时光，空白的是你剩余的时间。\n\n这个简单的可视化比任何时间管理工具都更有力量。当你看到有限的时间铺陈在眼前，什么最重要变得一目了然。\n\n为什么 MEMENTO 有效\n\n• 生命网格 — 将一生以周为单位可视化。一眼看清走过的路和剩余的时光。\n• 每日斯多葛箴言 — 99条精选名言，来自马可·奥勒留、塞涅卡、爱比克泰德等斯多葛大师。每天一句，沉淀思绪。\n• 个人里程碑 — 在网格上标记人生转折点。毕业、初次工作、结婚，或任何对你重要的时刻。\n• 深色极简设计 — 为反思而生，非为分散注意力。纯暗色界面，让内容自己说话。\n\n主要功能\n\n• 可调整预期寿命（60-100岁）\n• 12种预设里程碑类型\n• 收藏喜欢的名言（Pro）\n• 无限里程碑（Pro）\n• 分享名言给朋友\n• 支持12种语言\n• 无需注册账号——所有数据留在你的设备上\n• 无广告、无追踪、无订阅\n\nMEMENTO PRO\n\n一次性购买 $3.99，永久解锁收藏名言和无限里程碑。没有订阅，没有续费。一次购买，永久拥有。\n\n下载 Memento，开始有意识地生活。",
+      "screenshot_captions": [
+        "你的一生，一张网格",
+        "每日斯多葛智慧箴言",
+        "标记人生重要时刻",
+        "解锁完整旅程"
+      ]
+    },
+    "zh-Hant": {
+      "title": "Memento - 生命週曆",
+      "subtitle": "斯多葛智慧與人生網格",
+      "keywords": "人生,週曆,生命,倒數,斯多葛,名言,死亡,提醒,冥想,時間管理,里程碑,極簡,視覺化,感悟",
+      "promotional_text": "將人生化為一張週曆網格。每個填滿的格子代表已度過的一週。搭配古老斯多葛哲學箴言，提醒你活在當下。無需註冊，資料純本地儲存。",
+      "description": "你已經活了多少週？還剩多少？\n\nMemento 將你的一生化為一張網格。每個方格代表一週——填滿的是已經過去的時光，空白的是你剩餘的時間。\n\n這個簡單的視覺化比任何時間管理工具都更有力量。當你看到有限的時間鋪陳在眼前，什麼最重要變得一目了然。\n\n為什麼 MEMENTO 有效\n\n• 生命網格 — 將一生以週為單位視覺化。一眼看清走過的路和剩餘的時光。\n• 每日斯多葛箴言 — 99條精選名言，來自馬可·奧勒留、塞涅卡、愛比克泰德等斯多葛大師。每天一句，沉澱思緒。\n• 個人里程碑 — 在網格上標記人生轉折點。畢業、初次工作、結婚，或任何對你重要的時刻。\n• 深色極簡設計 — 為反思而生，非為分散注意力。純暗色介面，讓內容自己說話。\n\n主要功能\n\n• 可調整預期壽命（60-100歲）\n• 12種預設里程碑類型\n• 收藏喜歡的名言（Pro）\n• 無限里程碑（Pro）\n• 分享名言給朋友\n• 支援12種語言\n• 無需註冊帳號——所有資料留在你的裝置上\n• 無廣告、無追蹤、無訂閱\n\nMEMENTO PRO\n\n一次性購買 $3.99，永久解鎖收藏名言和無限里程碑。沒有訂閱，沒有續費。一次購買，永久擁有。\n\n下載 Memento，開始有意識地生活。",
+      "screenshot_captions": [
+        "你的一生，一張網格",
+        "每日斯多葛智慧箴言",
+        "標記人生重要時刻",
+        "解鎖完整旅程"
+      ]
+    },
+    "ja": {
+      "title": "Memento - 人生の週カレンダー",
+      "subtitle": "ストア哲学の知恵と人生グリッド",
+      "keywords": "人生,週,カレンダー,ストア,名言,死,リマインダー,瞑想,時間管理,マイルストーン,ミニマル,可視化,哲学,格言",
+      "promotional_text": "人生を週のグリッドで可視化。塗りつぶされたマスは過ごした週。ストア哲学の知恵と共に、今を大切に生きる。アカウント不要、データは端末に保存。",
+      "description": "あなたはこれまで何週間生きてきましたか？残りは何週間？\n\nMementoはあなたの人生全体をひとつのグリッドに変えます。各マスが1週間——塗りつぶされたマスはすでに過ぎた時間。残りは、あなたに残された時間です。\n\nこのシンプルな可視化は、どんな生産性アプリよりも心に響きます。\n\n特徴\n\n• ライフグリッド — 人生全体を週単位で可視化\n• 毎日のストア哲学の名言 — マルクス・アウレリウス、セネカ、エピクテトスなどの99の厳選名言\n• パーソナルマイルストーン — 卒業、就職、結婚などの人生の転機をグリッドに記録\n• ダークミニマルデザイン — 内省のためのシンプルなインターフェース\n\n機能\n\n• 平均寿命の調整（60〜100歳）\n• 12種類のプリセットマイルストーン\n• お気に入りの名言を保存（Pro）\n• 無制限のマイルストーン（Pro）\n• 12言語対応\n• アカウント不要——全データは端末に保存\n• 広告なし・トラッキングなし・サブスクなし\n\nMEMENTO PRO\n\n$3.99の買い切りで、お気に入り保存と無制限マイルストーンを解放。サブスクリプションなし。\n\nMementoをダウンロードして、意識的に生き始めましょう。",
+      "screenshot_captions": [
+        "あなたの人生、ひとつのグリッド",
+        "毎日のストア哲学の知恵",
+        "大切な瞬間を記録する",
+        "すべての機能を解放"
+      ]
+    },
+    "ko": {
+      "title": "Memento - 인생 주간 달력",
+      "subtitle": "스토아 철학 명언과 인생 그리드",
+      "keywords": "인생,주간,달력,스토아,명언,죽음,리마인더,명상,시간관리,마일스톤,미니멀,시각화,철학,격언",
+      "promotional_text": "인생을 주 단위 그리드로 시각화하세요. 채워진 칸은 이미 보낸 주입니다. 스토아 철학 명언과 함께 매일을 의미있게. 계정 불필요, 데이터는 기기에 저장.",
+      "description": "당신은 지금까지 몇 주를 살았나요? 남은 시간은?\n\nMemento는 당신의 인생 전체를 하나의 그리드로 보여줍니다. 각 칸은 1주일——채워진 칸은 이미 지나간 시간이고, 나머지는 남은 시간입니다.\n\n특징\n\n• 라이프 그리드 — 인생 전체를 주 단위로 시각화\n• 매일 스토아 명언 — 마르쿠스 아우렐리우스, 세네카 등 99개 엄선 명언\n• 개인 마일스톤 — 졸업, 취업, 결혼 등 인생 전환점 기록\n• 다크 미니멀 디자인 — 성찰을 위한 깔끔한 인터페이스\n\n기능\n\n• 기대 수명 조절 (60-100세)\n• 12가지 프리셋 마일스톤\n• 좋아하는 명언 저장 (Pro)\n• 무제한 마일스톤 (Pro)\n• 12개 언어 지원\n• 계정 불필요 — 모든 데이터는 기기에 저장\n• 광고 없음, 추적 없음, 구독 없음\n\nMEMENTO PRO\n\n$3.99 일회성 구매로 즐겨찾기와 무제한 마일스톤 해제. 구독 없음.\n\nMemento를 다운로드하고 의식적으로 살기 시작하세요.",
+      "screenshot_captions": [
+        "당신의 인생, 하나의 그리드",
+        "매일 스토아 철학의 지혜",
+        "소중한 순간을 기록하세요",
+        "모든 기능 잠금 해제"
+      ]
+    },
+    "de": {
+      "title": "Memento - Leben in Wochen",
+      "subtitle": "Stoische Weisheit & Raster",
+      "keywords": "kalender,stoisch,zitat,tod,erinnerung,achtsamkeit,meilenstein,minimal,sterblichkeit,countdown,raster",
+      "promotional_text": "Visualisiere dein Leben als Wochenraster. Jedes ausgefüllte Feld ist eine gelebte Woche. Stoische Weisheit erinnert dich, bewusst zu leben. Kein Konto nötig.",
+      "description": "Wie viele Wochen hast du gelebt? Wie viele bleiben?\n\nMemento verwandelt dein gesamtes Leben in ein einziges Raster. Jedes Feld ist eine Woche — ausgefüllte Felder sind vergangene Wochen. Der Rest? Das ist deine verbleibende Zeit.\n\nWarum Memento funktioniert\n\n• Lebensraster — Dein ganzes Leben als Wochenraster visualisiert\n• Tägliche stoische Zitate — 99 handverlesene Zitate von Marcus Aurelius, Seneca und Epiktet\n• Persönliche Meilensteine — Markiere Wendepunkte deines Lebens\n• Dunkles minimales Design — Für Reflexion gebaut, nicht für Ablenkung\n\nFunktionen\n\n• Einstellbare Lebenserwartung (60–100 Jahre)\n• 12 voreingestellte Meilensteintypen\n• Lieblingszitate speichern (Pro)\n• Unbegrenzte Meilensteine (Pro)\n• 12 Sprachen verfügbar\n• Kein Konto erforderlich — alle Daten bleiben auf deinem Gerät\n• Keine Werbung, kein Tracking, kein Abo\n\nMEMENTO PRO\n\nEinmalkauf für $3.99. Kein Abonnement.\n\nLade Memento herunter und beginne bewusst zu leben.",
+      "screenshot_captions": [
+        "Dein ganzes Leben in einem Raster",
+        "Tägliche stoische Weisheit",
+        "Markiere wichtige Momente",
+        "Schalte alles frei"
+      ]
+    },
+    "fr": {
+      "title": "Memento - Vie en Semaines",
+      "subtitle": "Sagesse stoïque & Grille",
+      "keywords": "calendrier,stoïque,citation,mort,rappel,conscience,jalon,minimal,mortalité,compte à rebours,grille",
+      "promotional_text": "Visualisez votre vie sous forme de grille hebdomadaire. Chaque case remplie est une semaine vécue. La sagesse stoïque vous rappelle de vivre pleinement. Sans inscription.",
+      "description": "Combien de semaines avez-vous vécu ? Combien en reste-t-il ?\n\nMemento transforme votre vie entière en une seule grille. Chaque case représente une semaine — les cases remplies sont les semaines passées. Le reste ? C'est le temps qu'il vous reste.\n\nPourquoi Memento fonctionne\n\n• Grille de vie — Votre vie entière visualisée semaine par semaine\n• Citations stoïques quotidiennes — 99 citations choisies de Marc Aurèle, Sénèque et Épictète\n• Jalons personnels — Marquez les tournants de votre vie\n• Design sombre et minimal — Conçu pour la réflexion\n\nFonctionnalités\n\n• Espérance de vie ajustable (60-100 ans)\n• 12 types de jalons prédéfinis\n• Sauvegardez vos citations favorites (Pro)\n• Jalons illimités (Pro)\n• Disponible en 12 langues\n• Aucun compte requis — toutes les données restent sur votre appareil\n• Sans publicité, sans suivi, sans abonnement\n\nMEMENTO PRO\n\nAchat unique à $3.99. Pas d'abonnement.\n\nTéléchargez Memento et commencez à vivre consciemment.",
+      "screenshot_captions": [
+        "Toute votre vie en une grille",
+        "Sagesse stoïque quotidienne",
+        "Marquez les moments importants",
+        "Débloquez tout"
+      ]
+    },
+    "es": {
+      "title": "Memento - Vida en Semanas",
+      "subtitle": "Sabiduría estoica y Grilla",
+      "keywords": "calendario,estoico,cita,muerte,recordatorio,consciencia,hito,minimal,mortalidad,regresiva,grilla",
+      "promotional_text": "Visualiza tu vida como una cuadrícula semanal. Cada casilla llena es una semana vivida. La sabiduría estoica te recuerda vivir plenamente. Sin registro necesario.",
+      "description": "¿Cuántas semanas has vivido? ¿Cuántas quedan?\n\nMemento convierte toda tu vida en una cuadrícula. Cada casilla es una semana — las casillas llenas son semanas pasadas. ¿El resto? Es el tiempo que te queda.\n\nPor qué Memento funciona\n\n• Cuadrícula de vida — Tu vida entera visualizada semana a semana\n• Citas estoicas diarias — 99 citas seleccionadas de Marco Aurelio, Séneca y Epicteto\n• Hitos personales — Marca los momentos clave de tu vida\n• Diseño oscuro y minimalista — Creado para la reflexión\n\nCaracterísticas\n\n• Esperanza de vida ajustable (60-100 años)\n• 12 tipos de hitos predefinidos\n• Guarda tus citas favoritas (Pro)\n• Hitos ilimitados (Pro)\n• Disponible en 12 idiomas\n• Sin cuenta necesaria — todos los datos en tu dispositivo\n• Sin anuncios, sin seguimiento, sin suscripción\n\nMEMENTO PRO\n\nCompra única por $3.99. Sin suscripción.\n\nDescarga Memento y empieza a vivir con intención.",
+      "screenshot_captions": [
+        "Toda tu vida en una cuadrícula",
+        "Sabiduría estoica diaria",
+        "Marca los momentos importantes",
+        "Desbloquea todo"
+      ]
+    },
+    "ru": {
+      "title": "Memento - Жизнь по неделям",
+      "subtitle": "Мудрость стоиков и сетка",
+      "keywords": "календарь,стоик,цитата,смерть,напоминание,осознанность,веха,минимализм,смертность,отсчёт,сетка",
+      "promotional_text": "Визуализируйте жизнь как сетку недель. Каждая заполненная клетка — прожитая неделя. Мудрость стоиков напомнит жить осознанно. Без регистрации.",
+      "description": "Сколько недель вы прожили? Сколько осталось?\n\nMemento превращает всю вашу жизнь в одну сетку. Каждая клетка — неделя. Заполненные клетки — прошедшие недели. Остальное — ваше оставшееся время.\n\nПочему Memento работает\n\n• Сетка жизни — Вся жизнь визуализирована по неделям\n• Ежедневные цитаты стоиков — 99 избранных цитат Марка Аврелия, Сенеки и Эпиктета\n• Личные вехи — Отмечайте поворотные моменты жизни\n• Тёмный минималистичный дизайн — Для размышлений, не для отвлечения\n\nФункции\n\n• Настраиваемая продолжительность жизни (60–100 лет)\n• 12 предустановленных типов вех\n• Сохранение любимых цитат (Pro)\n• Неограниченные вехи (Pro)\n• 12 языков\n• Без аккаунта — все данные на устройстве\n• Без рекламы, без отслеживания, без подписки\n\nMEMENTO PRO\n\nОдноразовая покупка за $3.99. Без подписки.\n\nСкачайте Memento и начните жить осознанно.",
+      "screenshot_captions": [
+        "Вся ваша жизнь в одной сетке",
+        "Ежедневная мудрость стоиков",
+        "Отмечайте важные моменты",
+        "Разблокируйте всё"
+      ]
+    },
+    "it": {
+      "title": "Memento - Vita in Settimane",
+      "subtitle": "Saggezza stoica e Griglia",
+      "keywords": "calendario,stoico,citazione,morte,promemoria,consapevolezza,traguardo,minimale,mortalità,griglia",
+      "promotional_text": "Visualizza la tua vita come una griglia settimanale. Ogni casella piena è una settimana vissuta. La saggezza stoica ti ricorda di vivere pienamente. Senza registrazione.",
+      "description": "Quante settimane hai vissuto? Quante ne restano?\n\nMemento trasforma tutta la tua vita in un'unica griglia. Ogni casella è una settimana — le caselle piene sono settimane passate. Il resto? È il tempo che ti rimane.\n\nPerché Memento funziona\n\n• Griglia della vita — La tua intera vita visualizzata settimana per settimana\n• Citazioni stoiche quotidiane — 99 citazioni scelte da Marco Aurelio, Seneca ed Epitteto\n• Traguardi personali — Segna i momenti chiave della tua vita\n• Design scuro e minimale — Progettato per la riflessione\n\nFunzionalità\n\n• Aspettativa di vita regolabile (60-100 anni)\n• 12 tipi di traguardi predefiniti\n• Salva le citazioni preferite (Pro)\n• Traguardi illimitati (Pro)\n• Disponibile in 12 lingue\n• Nessun account richiesto — tutti i dati sul tuo dispositivo\n• Nessuna pubblicità, nessun tracciamento, nessun abbonamento\n\nMEMENTO PRO\n\nAcquisto una tantum a $3.99. Nessun abbonamento.\n\nScarica Memento e inizia a vivere con intenzione.",
+      "screenshot_captions": [
+        "Tutta la tua vita in una griglia",
+        "Saggezza stoica quotidiana",
+        "Segna i momenti importanti",
+        "Sblocca tutto"
+      ]
+    },
+    "ar": {
+      "title": "Memento - الحياة بالأسابيع",
+      "subtitle": "حكمة رواقية وشبكة الحياة",
+      "keywords": "حياة,أسابيع,تقويم,رواقي,اقتباس,موت,تذكير,وعي,معلم,بسيط,فناء,عد تنازلي,وقت,شبكة",
+      "promotional_text": "تصور حياتك كشبكة أسابيع. كل خانة ممتلئة هي أسبوع عشته. الحكمة الرواقية تذكرك بالعيش بوعي. بدون تسجيل حساب.",
+      "description": "كم أسبوعاً عشت؟ كم تبقى؟\n\nMemento يحول حياتك بأكملها إلى شبكة واحدة. كل خانة هي أسبوع — الخانات الممتلئة هي أسابيع مضت. والباقي؟ هو الوقت المتبقي لك.\n\nلماذا Memento فعّال\n\n• شبكة الحياة — حياتك بأكملها مرئية أسبوعاً بأسبوع\n• اقتباسات رواقية يومية — 99 اقتباساً مختاراً من ماركوس أوريليوس وسينيكا وإبيكتيتوس\n• معالم شخصية — حدد نقاط التحول في حياتك\n• تصميم داكن بسيط — مصمم للتأمل لا للإلهاء\n\nالميزات\n\n• متوسط العمر المتوقع قابل للتعديل (60-100 سنة)\n• 12 نوعاً من المعالم المعدة مسبقاً\n• حفظ الاقتباسات المفضلة (Pro)\n• معالم غير محدودة (Pro)\n• متوفر بـ 12 لغة\n• بدون حساب — جميع البيانات على جهازك\n• بدون إعلانات، بدون تتبع، بدون اشتراك\n\nMEMENTO PRO\n\nشراء لمرة واحدة بـ $3.99. بدون اشتراك.\n\nحمّل Memento وابدأ العيش بوعي.",
+      "screenshot_captions": [
+        "حياتك كلها في شبكة واحدة",
+        "حكمة رواقية يومية",
+        "حدد اللحظات المهمة",
+        "افتح كل الميزات"
+      ]
+    },
+    "id": {
+      "title": "Memento - Hidup per Minggu",
+      "subtitle": "Kebijaksanaan Stoik & Grid",
+      "keywords": "kalender,stoik,kutipan,kematian,pengingat,kesadaran,pencapaian,minimal,kefanaan,hitung mundur,grid",
+      "promotional_text": "Visualisasikan hidup sebagai grid mingguan. Setiap kotak terisi adalah seminggu yang telah dijalani. Kebijaksanaan Stoik mengingatkan untuk hidup bermakna. Tanpa akun.",
+      "description": "Berapa minggu sudah kamu jalani? Berapa yang tersisa?\n\nMemento mengubah seluruh hidupmu menjadi satu grid. Setiap kotak adalah satu minggu — kotak yang terisi adalah minggu yang sudah berlalu. Sisanya? Itu waktu yang tersisa untukmu.\n\nMengapa Memento efektif\n\n• Grid Hidup — Seluruh hidupmu divisualisasikan per minggu\n• Kutipan Stoik harian — 99 kutipan pilihan dari Marcus Aurelius, Seneca, dan Epictetus\n• Pencapaian pribadi — Tandai momen penting dalam hidupmu\n• Desain gelap minimalis — Dirancang untuk refleksi\n\nFitur\n\n• Harapan hidup yang dapat disesuaikan (60-100 tahun)\n• 12 jenis pencapaian preset\n• Simpan kutipan favorit (Pro)\n• Pencapaian tak terbatas (Pro)\n• Tersedia dalam 12 bahasa\n• Tanpa akun — semua data di perangkatmu\n• Tanpa iklan, tanpa pelacakan, tanpa langganan\n\nMEMENTO PRO\n\nPembelian sekali seharga $3.99. Tanpa langganan.\n\nUnduh Memento dan mulai hidup dengan kesadaran.",
+      "screenshot_captions": [
+        "Seluruh hidupmu dalam satu grid",
+        "Kebijaksanaan Stoik setiap hari",
+        "Tandai momen penting",
+        "Buka semua fitur"
+      ]
+    }
+  }
+}
