@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-04-08T12:00:00Z",
+  "monetization": "freemium_lifetime",
+  "apple": {
+    "app_id": "6761179518",
+    "product_id": "memento_pro_lifetime",
+    "iap_id": "6761798175",
+    "exists": true,
+    "state": "READY_TO_SUBMIT",
+    "review_screenshot_status": "uploaded",
+    "availability": true
+  },
+  "revenuecat": {
+    "project_id": "proj602a5c97",
+    "ios_app_id": "appe37d79227b",
+    "test_store_app_id": "appa54bd2956e",
+    "ios_product_id": "prod46706a61ef",
+    "test_product_id": "prod0de179f34c",
+    "store_identifier": "memento_pro_lifetime",
+    "bundle_id": "ai.maaker.memento",
+    "offering_id": "ofrng640c6ed572",
+    "offering_lookup_key": "default",
+    "offering_ready": true,
+    "package_id": "pkge80ea0baa37",
+    "package_lookup_key": "$rc_lifetime",
+    "entitlement_id": "entl4b185c6820",
+    "entitlement_lookup_key": "pro",
+    "app_store_connect_api_key_configured": true,
+    "subscription_key_configured": true
+  },
+  "paywall": {
+    "price": 3.99,
+    "price_source": "design screenshot (oXvnX.png)"
+  },
+  "fixes_applied": [
+    "Updated iOS app bundle_id from top.dramavision.memento to ai.maaker.memento",
+    "Configured ASC API Key (L57984QZY8) on iOS app",
+    "Configured Subscription Key (L57984QZY8) on iOS app",
+    "Created iOS product prod46706a61ef (was only on Test Store)",
+    "Attached iOS product to Lifetime package",
+    "Attached iOS product to pro entitlement",
+    "Set IAP availability for all 175 territories",
+    "Uploaded review screenshot (1290x2796)"
+  ],
+  "status": "pass"
+}
