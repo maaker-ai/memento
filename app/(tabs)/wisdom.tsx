@@ -69,7 +69,7 @@ function BookmarkIcon() {
 }
 
 export default function WisdomScreen() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [quote, setQuote] = useState<Quote>(() => getDailyQuote(t));
   const [favorites, setFavorites] = useState<number[]>([]);
   const router = useRouter();
@@ -78,6 +78,11 @@ export default function WisdomScreen() {
   useEffect(() => {
     getFavoriteQuotes().then(setFavorites).catch(() => {});
   }, []);
+
+  // Re-generate quote when language changes (for i18n)
+  useEffect(() => {
+    setQuote(getDailyQuote(t));
+  }, [i18n.language]);
 
   const isFavorited = favorites.includes(quote.id);
 

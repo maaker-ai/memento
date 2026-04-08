@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T16:50:00Z",
+  "generated_at": "2026-04-08T15:30:00Z",
   "icon": {
     "path": "/Users/martin/OpenSource/Memento/assets/icon.png",
     "format": "png",
@@ -7,13 +7,20 @@
     "validated": true,
     "description": "Gold hourglass on dark background, Stoic theme"
   },
-  "screenshots": {
-    "status": "missing_design_exports",
-    "note": "Design screenshots available in design/ directory. Real App UI captures needed for App Store submission. TestFlight beta can proceed without screenshots."
-  },
   "privacy_policy": {
+    "url": "https://maaker-ai.github.io/memento/privacy-policy.html",
+    "hosted_on": "github-pages",
+    "repo": "maaker-ai/memento",
     "local_path": "docs/privacy-policy.html",
-    "status": "ready_local",
-    "note": "Needs GitHub Pages deployment for public URL. TestFlight can proceed without public URL."
+    "status": "ready"
+  },
+  "screenshots": {
+    "status": "ready",
+    "display_type": "APP_IPHONE_67",
+    "actual_size": "1290x2796",
+    "count_per_locale": 4,
+    "manifest_path": "/Users/martin/OpenSource/Memento/app-store/asc-screenshot-manifest.json",
+    "locales": ["en", "zh-Hans", "zh-Hant", "ja", "ko", "de", "fr", "es", "ru", "it", "ar", "id"],
+    "validated": true
   }
 }

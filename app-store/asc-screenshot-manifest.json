@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-04-08",
+  "app": "Memento",
+  "bundle_id": "ai.maaker.memento",
+  "display_type": "APP_IPHONE_67",
+  "actual_size": "1290x2796",
+  "screenshots_per_locale": 4,
+  "locales": {
+    "en-US": {
+      "path": "en/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "zh-Hans": {
+      "path": "zh-Hans/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "zh-Hant": {
+      "path": "zh-Hant/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "ja": {
+      "path": "ja/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "ko": {
+      "path": "ko/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "de-DE": {
+      "path": "de/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "fr-FR": {
+      "path": "fr/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "es-ES": {
+      "path": "es/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "ru": {
+      "path": "ru/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "it": {
+      "path": "it/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "ar-SA": {
+      "path": "ar/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    },
+    "id": {
+      "path": "id/iphone-67",
+      "files": [
+        "1_life.png",
+        "2_wisdom.png",
+        "3_settings.png",
+        "4_paywall.png"
+      ]
+    }
+  }
+}
