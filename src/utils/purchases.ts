@@ -1,9 +1,9 @@
 import { Platform } from 'react-native';
 import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 
-const RC_IOS_KEY = 'appl_UPskDdhaGEVfSQtQAPpZVfcPkGJ';
+const RC_IOS_KEY = 'appl_aUbInCwRpvnhEtwyUoEMgGeDddH';
 const RC_ANDROID_KEY = ''; // TODO: add when Android app is set up
-const RC_TEST_KEY = 'test_UyLkbbiIfvDaAWNNaurdsuHcmKM';
+const RC_TEST_KEY = 'test_dGYBqQyFwyGuHgRWzehaBzHxoqV';
 const ENTITLEMENT_ID = 'pro';
 
 export async function initPurchases() {
