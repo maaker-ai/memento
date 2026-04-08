@@ -80,7 +80,9 @@
     "failedRestore": "Kauf konnte nicht wiederhergestellt werden.",
     "ok": "OK",
     "purchaseSuccess": "Willkommen bei Pro!",
-    "purchaseSuccessMessage": "Vielen Dank für deine Unterstützung. Alle Funktionen sind freigeschaltet."
+    "purchaseSuccessMessage": "Vielen Dank für deine Unterstützung. Alle Funktionen sind freigeschaltet.",
+    "unavailable": "Produkt derzeit nicht verfügbar",
+    "retry": "Erneut versuchen"
   },
   "favorites": {
     "title": "Favoriten",

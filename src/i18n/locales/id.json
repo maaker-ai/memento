@@ -80,7 +80,9 @@
     "failedRestore": "Gagal memulihkan pembelian.",
     "ok": "OK",
     "purchaseSuccess": "Selamat datang di Pro!",
-    "purchaseSuccessMessage": "Terima kasih atas dukunganmu. Semua fitur telah dibuka."
+    "purchaseSuccessMessage": "Terima kasih atas dukunganmu. Semua fitur telah dibuka.",
+    "unavailable": "Produk saat ini tidak tersedia",
+    "retry": "Coba lagi"
   },
   "favorites": {
     "title": "Favorit",

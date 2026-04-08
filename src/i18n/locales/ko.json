@@ -80,7 +80,9 @@
     "failedRestore": "구매 복원에 실패했습니다.",
     "ok": "확인",
     "purchaseSuccess": "Pro에 오신 것을 환영합니다!",
-    "purchaseSuccessMessage": "감사합니다. 모든 기능이 잠금 해제되었습니다."
+    "purchaseSuccessMessage": "감사합니다. 모든 기능이 잠금 해제되었습니다.",
+    "unavailable": "현재 상품을 이용할 수 없습니다",
+    "retry": "다시 시도"
   },
   "favorites": {
     "title": "즐겨찾기",

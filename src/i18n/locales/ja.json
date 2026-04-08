@@ -80,7 +80,9 @@
     "failedRestore": "購入の復元に失敗しました。",
     "ok": "OK",
     "purchaseSuccess": "Pro へようこそ！",
-    "purchaseSuccessMessage": "ご支援ありがとうございます。すべての機能が解放されました。"
+    "purchaseSuccessMessage": "ご支援ありがとうございます。すべての機能が解放されました。",
+    "unavailable": "現在商品を取得できません",
+    "retry": "再試行"
   },
   "favorites": {
     "title": "お気に入り",

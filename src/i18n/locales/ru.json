@@ -80,7 +80,9 @@
     "failedRestore": "Не удалось восстановить покупку.",
     "ok": "OK",
     "purchaseSuccess": "Добро пожаловать в Pro!",
-    "purchaseSuccessMessage": "Спасибо за поддержку. Все функции разблокированы."
+    "purchaseSuccessMessage": "Спасибо за поддержку. Все функции разблокированы.",
+    "unavailable": "Товар временно недоступен",
+    "retry": "Повторить"
   },
   "favorites": {
     "title": "Избранное",

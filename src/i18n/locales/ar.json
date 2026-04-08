@@ -80,7 +80,9 @@
     "failedRestore": "فشل استعادة عمليات الشراء.",
     "ok": "حسناً",
     "purchaseSuccess": "مرحباً في Pro!",
-    "purchaseSuccessMessage": "شكراً لدعمك. تم فتح جميع الميزات."
+    "purchaseSuccessMessage": "شكراً لدعمك. تم فتح جميع الميزات.",
+    "unavailable": "المنتج غير متاح حالياً",
+    "retry": "إعادة المحاولة"
   },
   "favorites": {
     "title": "المفضلة",

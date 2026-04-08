@@ -80,7 +80,9 @@
     "failedRestore": "Failed to restore purchases.",
     "ok": "OK",
     "purchaseSuccess": "Welcome to Pro!",
-    "purchaseSuccessMessage": "Thank you for your support. All features are now unlocked."
+    "purchaseSuccessMessage": "Thank you for your support. All features are now unlocked.",
+    "unavailable": "Product currently unavailable",
+    "retry": "Retry"
   },
   "favorites": {
     "title": "Favorites",

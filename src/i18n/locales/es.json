@@ -80,7 +80,9 @@
     "failedRestore": "No se pudo restaurar la compra.",
     "ok": "OK",
     "purchaseSuccess": "Bienvenido a Pro!",
-    "purchaseSuccessMessage": "Gracias por tu apoyo. Todas las funciones están desbloqueadas."
+    "purchaseSuccessMessage": "Gracias por tu apoyo. Todas las funciones están desbloqueadas.",
+    "unavailable": "Producto no disponible en este momento",
+    "retry": "Reintentar"
   },
   "favorites": {
     "title": "Favoritos",

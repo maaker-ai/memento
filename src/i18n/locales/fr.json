@@ -80,7 +80,9 @@
     "failedRestore": "Échec de la restauration des achats.",
     "ok": "OK",
     "purchaseSuccess": "Bienvenue dans Pro !",
-    "purchaseSuccessMessage": "Merci pour votre soutien. Toutes les fonctionnalités sont débloquées."
+    "purchaseSuccessMessage": "Merci pour votre soutien. Toutes les fonctionnalités sont débloquées.",
+    "unavailable": "Produit actuellement indisponible",
+    "retry": "Réessayer"
   },
   "favorites": {
     "title": "Favoris",

@@ -80,7 +80,9 @@
     "failedRestore": "恢復購買失敗。",
     "ok": "好",
     "purchaseSuccess": "歡迎加入 Pro！",
-    "purchaseSuccessMessage": "感謝你的支持。所有功能已解鎖。"
+    "purchaseSuccessMessage": "感謝你的支持。所有功能已解鎖。",
+    "unavailable": "商品暫時不可用",
+    "retry": "重試"
   },
   "favorites": {
     "title": "收藏",

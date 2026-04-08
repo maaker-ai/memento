@@ -75,6 +75,8 @@ export default function PaywallScreen() {
   }, []);
 
   const loadOfferings = async () => {
+    setLoading(true);
+    setLifetimePackage(null);
     try {
       const offering = await getOfferings();
       if (offering) {
@@ -221,10 +223,43 @@ export default function PaywallScreen() {
         {/* Purchase Button - Gold Gradient */}
         {loading ? (
           <ActivityIndicator color={COLORS.milestone} />
+        ) : !lifetimePackage ? (
+          <View style={{ width: "100%", alignItems: "center", gap: 16 }}>
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#6E6E70",
+                fontFamily: "Cormorant Garamond",
+                textAlign: "center",
+              }}
+            >
+              {t("paywall.unavailable")}
+            </Text>
+            <TouchableOpacity
+              onPress={loadOfferings}
+              style={{
+                paddingHorizontal: 32,
+                paddingVertical: 12,
+                borderRadius: 12,
+                borderWidth: 1,
+                borderColor: "#6E6E70",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "#E5E5E5",
+                  fontFamily: "Cormorant Garamond",
+                }}
+              >
+                {t("paywall.retry")}
+              </Text>
+            </TouchableOpacity>
+          </View>
         ) : (
           <TouchableOpacity
             onPress={handlePurchase}
-            disabled={purchasing || !lifetimePackage}
+            disabled={purchasing}
             style={{
               width: "100%",
               opacity: purchasing ? 0.6 : 1,
@@ -253,9 +288,7 @@ export default function PaywallScreen() {
                     fontFamily: "CormorantGaramond-Light",
                   }}
                 >
-                  {lifetimePackage
-                    ? t("paywall.unlockFor", { price: lifetimePackage.product.priceString })
-                    : t("paywall.unlockDefault")}
+                  {t("paywall.unlockFor", { price: lifetimePackage.product.priceString })}
                 </Text>
               )}
             </LinearGradient>
