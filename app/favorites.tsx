@@ -12,7 +12,8 @@ import { useTranslation } from "react-i18next";
 import Svg, { Path } from "react-native-svg";
 import { COLORS } from "../src/utils/constants";
 import { getFavoriteQuotes, toggleFavoriteQuote } from "../src/utils/storage";
-import { quotes } from "../src/data/quotes";
+import { getQuoteById } from "../src/data/quotes";
+import { Quote } from "../src/types";
 
 function CloseIcon() {
   return (
@@ -31,25 +32,25 @@ function CloseIcon() {
 export default function FavoritesScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-  const [favoriteTexts, setFavoriteTexts] = useState<string[]>([]);
+  const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
 
   useFocusEffect(
     useCallback(() => {
-      getFavoriteQuotes().then(setFavoriteTexts).catch(() => {});
+      getFavoriteQuotes().then(setFavoriteIds).catch(() => {});
     }, [])
   );
 
   const handleRemoveFavorite = useCallback(
-    async (quoteText: string) => {
-      await toggleFavoriteQuote(quoteText);
+    async (quoteId: number) => {
+      await toggleFavoriteQuote(quoteId);
       const updated = await getFavoriteQuotes();
-      setFavoriteTexts(updated);
+      setFavoriteIds(updated);
     },
     []
   );
 
   const confirmRemove = useCallback(
-    (quoteText: string) => {
+    (quoteId: number) => {
       Alert.alert(
         t("favorites.removeTitle"),
         t("favorites.removeConfirm"),
@@ -58,7 +59,7 @@ export default function FavoritesScreen() {
           {
             text: t("common.delete"),
             style: "destructive",
-            onPress: () => handleRemoveFavorite(quoteText),
+            onPress: () => handleRemoveFavorite(quoteId),
           },
         ]
       );
@@ -66,10 +67,8 @@ export default function FavoritesScreen() {
     [t, handleRemoveFavorite]
   );
 
-  // Map favorite texts to full Quote objects
-  const favoriteQuotes = favoriteTexts
-    .map((text) => quotes.find((q) => q.text === text))
-    .filter(Boolean);
+  // Map favorite ids to full Quote objects
+  const favoriteQuotes: Quote[] = favoriteIds.map((id) => getQuoteById(id, t));
 
   return (
     <SafeAreaView
@@ -152,10 +151,10 @@ export default function FavoritesScreen() {
           }}
           showsVerticalScrollIndicator={false}
         >
-          {favoriteQuotes.map((quote, idx) => (
+          {favoriteQuotes.map((quote) => (
             <TouchableOpacity
-              key={idx}
-              onLongPress={() => confirmRemove(quote!.text)}
+              key={quote.id}
+              onLongPress={() => confirmRemove(quote.id)}
               activeOpacity={0.7}
               style={{
                 backgroundColor: "#1A1A1A",
@@ -183,7 +182,7 @@ export default function FavoritesScreen() {
                   lineHeight: 28,
                 }}
               >
-                {quote!.text}
+                {quote.text}
               </Text>
               <Text
                 style={{
@@ -193,7 +192,7 @@ export default function FavoritesScreen() {
                   marginTop: 4,
                 }}
               >
-                {t("wisdom.authorPrefix")} {quote!.author}
+                {t("wisdom.authorPrefix")} {quote.author}
               </Text>
             </TouchableOpacity>
           ))}

@@ -69,9 +69,9 @@ function BookmarkIcon() {
 }
 
 export default function WisdomScreen() {
-  const [quote, setQuote] = useState<Quote>(getDailyQuote);
-  const [favorites, setFavorites] = useState<string[]>([]);
   const { t } = useTranslation();
+  const [quote, setQuote] = useState<Quote>(() => getDailyQuote(t));
+  const [favorites, setFavorites] = useState<number[]>([]);
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(1)).current;
 
@@ -79,7 +79,7 @@ export default function WisdomScreen() {
     getFavoriteQuotes().then(setFavorites).catch(() => {});
   }, []);
 
-  const isFavorited = favorites.includes(quote.text);
+  const isFavorited = favorites.includes(quote.id);
 
   const handleShare = useCallback(async () => {
     try {
@@ -93,7 +93,7 @@ export default function WisdomScreen() {
     if (Platform.OS === "ios") {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
-    await toggleFavoriteQuote(quote.text);
+    await toggleFavoriteQuote(quote.id);
     const updated = await getFavoriteQuotes();
     setFavorites(updated);
   }, [quote]);
@@ -106,7 +106,7 @@ export default function WisdomScreen() {
       easing: Easing.in(Easing.cubic),
       useNativeDriver: true,
     }).start(() => {
-      setQuote(getRandomQuote());
+      setQuote(getRandomQuote(t));
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 200,
@@ -114,7 +114,7 @@ export default function WisdomScreen() {
         useNativeDriver: true,
       }).start();
     });
-  }, [fadeAnim]);
+  }, [fadeAnim, t]);
 
   return (
     <SafeAreaView
