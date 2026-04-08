@@ -13,7 +13,8 @@
     "ios": {
       "supportsTablet": false,
       "infoPlist": {
-        "UIRequiresFullScreen": true
+        "UIRequiresFullScreen": true,
+        "ITSAppUsesNonExemptEncryption": false
       },
       "bundleIdentifier": "ai.maaker.memento"
     },
