@@ -1,0 +1,27 @@
+{
+  "configVersion": 0,
+  "apple": {
+    "info": {
+      "en-US": {
+        "title": "Memento - Life in Weeks",
+        "subtitle": "Stoic Wisdom & Life Grid",
+        "description": "How many weeks have you lived? How many remain?\n\nMemento turns your entire life into a single, powerful grid. Each square is one week — filled squares are weeks already behind you. The rest? That's what you have left.\n\nThis simple visualization hits harder than any productivity app. When you see your finite time laid out, priorities become clear.\n\nWHY MEMENTO WORKS\n\n• Life Grid — Your entire lifespan as a visual grid of weeks. One glance shows how far you've come and how much time remains.\n• Daily Stoic Quotes — 99 hand-picked quotes from Marcus Aurelius, Seneca, Epictetus, and other Stoic masters. A new one each day to ground your thinking.\n• Personal Milestones — Mark life's turning points on your grid. Graduation, first job, marriage, or any moment that matters to you.\n• Dark Minimal Design — Built for reflection, not distraction. Pure dark interface that lets the content speak.\n\nFEATURES\n\n• Adjustable life expectancy (60–100 years)\n• 12 preset milestone types or create your own\n• Save favorite quotes for quick access (Pro)\n• Unlimited milestones (Pro)\n• Share quotes with friends\n• Available in 12 languages\n• No account required — all data stays on your device\n• No ads, no tracking, no subscriptions\n\nMEMENTO PRO\n\nOne-time purchase of $3.99 unlocks saving favorite quotes and unlimited milestones. No subscriptions. No recurring charges. Pay once, yours forever.\n\nINSPIRED BY STOIC PHILOSOPHY\n\nThe ancient Stoics practiced \"memento mori\" — remembering death — not to be morbid, but to be fully alive. Marcus Aurelius wrote: \"You could leave life right now. Let that determine what you do and say and think.\"\n\nThis app brings that practice to your pocket.\n\nDownload Memento and start living with intention.",
+        "keywords": ["mori", "calendar", "stoic", "quote", "death", "clock", "countdown", "mindful", "milestone", "mortality", "grid", "wisdom", "reflect"],
+        "promoText": "See your life as a grid of weeks. Each filled square is a week you've lived. Pair ancient Stoic wisdom with a visual reminder to live fully. No account needed.",
+        "releaseNotes": "• Life grid now updates instantly when you change life expectancy\n• Improved milestone date picker with native controls\n• Smoother quote transitions\n• Fixed favorites page layout\n• Better accessibility across all screens",
+        "supportUrl": "https://maaker-ai.github.io/memento/privacy-policy.html",
+        "privacyPolicyUrl": "https://maaker-ai.github.io/memento/privacy-policy.html"
+      }
+    },
+    "categories": ["HEALTH_AND_FITNESS", "LIFESTYLE"],
+    "copyright": "2026 maaker.ai",
+    "review": {
+      "firstName": "Martin",
+      "lastName": "Ma",
+      "email": "maruipeng@qq.com",
+      "phone": "+86 17710676950",
+      "demoRequired": false,
+      "notes": "This app works entirely offline. No login required. The Pro upgrade (memento_pro_lifetime) is a one-time purchase for $3.99 that unlocks saving favorite quotes and unlimited milestones."
+    }
+  }
+}
