@@ -1,55 +1,45 @@
-# What to Test — Memento v1.0.0 Build 7
+# What to Test — Memento v1.0.0 Build 9
 
-## Changes Since Last Build
+## Changes Since Build 8
 
-### New Features
-- **Favorites page**: Tap bookmark icon on Wisdom screen to view saved quotes
-- **Milestone dates visible**: Each milestone now shows its date below the name
-- **Quote animation**: Smooth fade transition when switching quotes
+### Quotes Internationalization
+- All 99 Stoic quotes now translated into 12 languages (en, zh-Hans, zh-Hant, ja, ko, de, fr, es, ru, it, ar, id)
+- Author names use culturally appropriate transliterations
+- Latin phrases (Memento mori, Amor fati) preserved as-is
+- Favorites migrated from text-based to ID-based storage (backward compatible)
 
-### Bug Fixes
-- Life screen now updates when life expectancy is changed in Settings
-- Birthday editing uses native iOS date picker (was text input)
-- Milestone date selection uses native iOS date picker (was Alert.prompt)
-- "Upgrade to Pro" button now works (was unresponsive)
-- Daily Quote toggle removed (was non-functional)
-- All milestone icons are now vector SVG (was emoji)
-- About dialog properly localized in all 12 languages
-- Purchase success shows confirmation alert before dismissing
+### IAP Configuration Fix
+- Fixed RevenueCat iOS app bundle ID (was `top.dramavision.memento`, now `ai.maaker.memento`)
+- Configured ASC API Key and Subscription Key on RevenueCat
+- Created iOS product mapping (was only on Test Store)
+- Apple IAP now `READY_TO_SUBMIT` with review screenshot and availability set
 
-### UX Improvements
-- "Long press to remove" hint below milestones
-- Life grid rows adjust to match life expectancy setting (60-100)
+### Build Config
+- Added `ITSAppUsesNonExemptEncryption=false` to skip export compliance prompt
 
-## Test Checklist
+## Test Focus
 
-### Life Screen
-- [ ] Set life expectancy to 100 in Settings → Life screen percentage and grid update
-- [ ] Birthday onboarding flow with native date picker
+### Priority 1: Quote Internationalization
+- [ ] Switch device to Chinese → Wisdom tab shows Chinese quotes and author names
+- [ ] Switch to Japanese → quotes in Japanese
+- [ ] Switch to Arabic → quotes in Arabic (RTL layout)
+- [ ] Switch back to English → quotes in English
+- [ ] Tap next arrow → new quote with fade animation, in current language
+- [ ] Share quote → shared text is in current language
 
-### Wisdom Screen
-- [ ] Tap heart to favorite → gold fill
-- [ ] Tap bookmark icon (top right) → opens Favorites page
-- [ ] Favorites page shows saved quotes
-- [ ] Long press quote in Favorites to unfavorite
-- [ ] Tap next arrow → smooth fade animation
-- [ ] Share button works
+### Priority 2: Favorites After Migration
+- [ ] Previously saved favorites still appear (migrated from text to ID)
+- [ ] Save new quote → appears in Favorites page
+- [ ] Switch language → same favorites still shown (by ID, not text)
+- [ ] Long press to unfavorite → works
 
-### Settings
-- [ ] Birthday: tap → native date spinner appears
-- [ ] Life Expectancy: slider works without conflicts
-- [ ] Milestones: each shows date below name
-- [ ] Add Milestone → template list → date picker → saved
-- [ ] Long press milestone → delete confirmation
-- [ ] "Long press to remove" hint visible
-- [ ] Upgrade to Pro → opens Paywall
-- [ ] About → shows localized info
-- [ ] Restore Purchase → proper response
+### Priority 3: Purchase Flow
+- [ ] Settings > Upgrade to Pro → opens Paywall
+- [ ] Paywall shows price from RevenueCat (not hardcoded)
+- [ ] Tap purchase → Apple payment sheet appears (sandbox)
+- [ ] Restore Purchase works
 
-### Paywall
-- [ ] Purchase button shows price
-- [ ] Purchase success → "Welcome to Pro!" alert
-- [ ] Close button works
-
-### i18n
-- [ ] Switch device to Chinese/Japanese → all text localized
+### Regression
+- [ ] Life screen percentage and grid display correctly
+- [ ] Birthday / Life Expectancy / Milestones editing works
+- [ ] All milestone icons are vector SVG

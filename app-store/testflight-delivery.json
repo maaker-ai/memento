@@ -1,18 +1,24 @@
 {
-  "uploaded_at": "2026-04-08T00:30:00Z",
-  "build_number": "8",
+  "uploaded_at": "2026-04-08T14:00:00Z",
+  "build_number": "10",
   "version": "1.0.0",
   "asc_app_id": "6761762165",
   "bundle_id": "ai.maaker.memento",
+  "eas_submission_id": "9be871bc-419d-4037-8940-2842a81565d1",
   "testflight_url": "https://appstoreconnect.apple.com/apps/6761762165/testflight/ios",
   "status": "processing",
-  "ipa_path": "build-1775580807854.ipa",
+  "ipa_path": "build-1775619178826.ipa",
   "internal_group_id": "38cb1327-91aa-4272-ba4f-b46c60a5b210",
   "tester_email": "maruipp@gmail.com",
-  "changes": "UX audit fixes: favorites page, milestone dates, quote animation, Pro button, DatePicker, vector icons, i18n About",
+  "changes": "Internationalize 99 Stoic quotes to 12 languages, fix IAP config (bundle ID + ASC keys + iOS product mapping), add export compliance flag",
   "iap_preflight": {
     "required": true,
+    "apple_product_id": "memento_pro_lifetime",
+    "apple_iap_state": "READY_TO_SUBMIT",
     "revenuecat_ios_key": "appl_UPskDdhaGEVfSQtQAPpZVfcPkGJ",
-    "entitlement": "pro"
+    "revenuecat_offering_ready": true,
+    "revenuecat_entitlement": "pro",
+    "app_store_connect_api_key_configured": true,
+    "subscription_key_configured": true
   }
 }
