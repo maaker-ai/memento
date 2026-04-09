@@ -5,15 +5,14 @@
   "bundle_id": "ai.maaker.memento",
   "display_type": "APP_IPHONE_67",
   "actual_size": "1290x2796",
-  "screenshots_per_locale": 4,
+  "screenshots_per_locale": 3,
   "locales": {
     "en-US": {
       "path": "en/iphone-67",
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "zh-Hans": {
@@ -21,8 +20,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "zh-Hant": {
@@ -30,8 +28,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "ja": {
@@ -39,8 +36,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "ko": {
@@ -48,8 +44,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "de-DE": {
@@ -57,8 +52,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "fr-FR": {
@@ -66,8 +60,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "es-ES": {
@@ -75,8 +68,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "ru": {
@@ -84,8 +76,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "it": {
@@ -93,8 +84,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "ar-SA": {
@@ -102,8 +92,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     },
     "id": {
@@ -111,8 +100,7 @@
       "files": [
         "1_life.png",
         "2_wisdom.png",
-        "3_settings.png",
-        "4_paywall.png"
+        "3_settings.png"
       ]
     }
   }
