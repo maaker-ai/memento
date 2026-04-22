@@ -699,73 +699,106 @@ export default function SettingsScreen() {
               </Text>
             </TouchableOpacity>
           </View>
-          {showMilestoneDatePicker && pendingMilestoneTemplate && (
-            <View
+          <Modal
+            visible={showMilestoneDatePicker && !!pendingMilestoneTemplate}
+            transparent
+            animationType="fade"
+            onRequestClose={() => {
+              setShowMilestoneDatePicker(false);
+              setPendingMilestoneTemplate(null);
+            }}
+          >
+            <Pressable
+              onPress={() => {
+                setShowMilestoneDatePicker(false);
+                setPendingMilestoneTemplate(null);
+              }}
               style={{
-                backgroundColor: "#1A1A1A",
-                borderRadius: 12,
-                overflow: "hidden",
-                marginTop: 4,
+                flex: 1,
+                backgroundColor: "rgba(0,0,0,0.6)",
+                justifyContent: "center",
+                alignItems: "center",
+                paddingHorizontal: 20,
               }}
             >
-              <Text
+              <Pressable
+                // Inner Pressable swallows taps so clicking the dialog
+                // body doesn't bubble up to the backdrop and close the Modal.
+                onPress={() => {}}
                 style={{
-                  fontSize: 14,
-                  color: "#E5E5E5",
-                  fontFamily: "Cormorant Garamond",
-                  textAlign: "center",
-                  paddingTop: 12,
-                  paddingHorizontal: 16,
+                  backgroundColor: "#1A1A1A",
+                  borderRadius: 20,
+                  overflow: "hidden",
+                  width: "85%",
+                  maxWidth: 320,
                 }}
               >
-                {pendingMilestoneTemplate.name}
-              </Text>
-              <DateTimePicker
-                value={milestonePickerDate}
-                mode="date"
-                display="spinner"
-                onChange={(_event, date) => {
-                  if (date) setMilestonePickerDate(date);
-                }}
-                locale={getPickerLocale()}
-                textColor="#E5E5E5"
-                themeVariant="dark"
-              />
-              <View style={{ flexDirection: "row", borderTopWidth: 0.5, borderTopColor: "#2A2A2A" }}>
-                <TouchableOpacity
-                  onPress={() => {
-                    setShowMilestoneDatePicker(false);
-                    setPendingMilestoneTemplate(null);
-                  }}
+                <Text
                   style={{
-                    flex: 1,
-                    paddingVertical: 12,
-                    alignItems: "center",
+                    fontSize: 16,
+                    color: "#E5E5E5",
+                    fontFamily: "Cormorant Garamond",
+                    textAlign: "center",
+                    paddingTop: 16,
+                    paddingHorizontal: 16,
                   }}
                 >
-                  <Text style={{ fontSize: 14, color: "#6E6E70", fontFamily: "Cormorant Garamond" }}>
-                    {t("common.cancel")}
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => {
-                    handleMilestoneDateChange(null as any, milestonePickerDate);
-                    setShowMilestoneDatePicker(false);
-                    setPendingMilestoneTemplate(null);
-                  }}
-                  style={{
-                    flex: 1,
-                    paddingVertical: 12,
-                    alignItems: "center",
-                  }}
-                >
-                  <Text style={{ fontSize: 14, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
-                    {t("settings.save")}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          )}
+                  {pendingMilestoneTemplate
+                    ? t(`milestones.${pendingMilestoneTemplate.key}`)
+                    : ""}
+                </Text>
+                <View style={{ alignItems: "center" }}>
+                  <DateTimePicker
+                    value={milestonePickerDate}
+                    mode="date"
+                    display="spinner"
+                    onChange={(_event, date) => {
+                      if (date) setMilestonePickerDate(date);
+                    }}
+                    locale={getPickerLocale()}
+                    textColor="#E5E5E5"
+                    themeVariant="dark"
+                    style={{ width: "100%" }}
+                  />
+                </View>
+                <View style={{ flexDirection: "row", borderTopWidth: 0.5, borderTopColor: "#2A2A2A" }}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      setShowMilestoneDatePicker(false);
+                      setPendingMilestoneTemplate(null);
+                    }}
+                    style={{
+                      flex: 1,
+                      paddingVertical: 14,
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={{ fontSize: 14, color: "#6E6E70", fontFamily: "Cormorant Garamond" }}>
+                      {t("common.cancel")}
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                      handleMilestoneDateChange(null as any, milestonePickerDate);
+                      setShowMilestoneDatePicker(false);
+                      setPendingMilestoneTemplate(null);
+                    }}
+                    style={{
+                      flex: 1,
+                      paddingVertical: 14,
+                      alignItems: "center",
+                      borderLeftWidth: 0.5,
+                      borderLeftColor: "#2A2A2A",
+                    }}
+                  >
+                    <Text style={{ fontSize: 14, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
+                      {t("settings.save")}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </Pressable>
+            </Pressable>
+          </Modal>
           {/* Long press hint */}
           {milestones.length > 0 && (
             <Text
