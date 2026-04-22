@@ -1,45 +1,79 @@
-# What to Test — Memento v1.0.0 Build 9
+# What to Test — Memento 1.0.1 (Build 13)
 
-## Changes Since Build 8
+## 本轮主要改动
 
-### Quotes Internationalization
-- All 99 Stoic quotes now translated into 12 languages (en, zh-Hans, zh-Hant, ja, ko, de, fr, es, ru, it, ar, id)
-- Author names use culturally appropriate transliterations
-- Latin phrases (Memento mori, Amor fati) preserved as-is
-- Favorites migrated from text-based to ID-based storage (backward compatible)
+### UI Bug 修复（3 项）
 
-### IAP Configuration Fix
-- Fixed RevenueCat iOS app bundle ID (was `top.dramavision.memento`, now `ai.maaker.memento`)
-- Configured ASC API Key and Subscription Key on RevenueCat
-- Created iOS product mapping (was only on Test Store)
-- Apple IAP now `READY_TO_SUBMIT` with review screenshot and availability set
+1. **里程碑模板名国际化**（commit `943aade`）
+   - 12 种语言的模板名已翻译：中文、日语、韩语、英语、德语、法语、西语、俄语等
+   - 之前：所有语言都显示英文模板名
 
-### Build Config
-- Added `ITSAppUsesNonExemptEncryption=false` to skip export compliance prompt
+2. **日期选择器改为 Modal 居中弹出**（commit `44a0665`）
+   - 之前：日期选择器贴着列表行展开，布局错位
+   - 现在：点击日期行 → Modal 居中弹出，体验流畅
 
-## Test Focus
+3. **DateTimePicker 时间滚轮居中**（commit `dfa9c74`）
+   - 之前：滚轮视觉上偏上，对齐不正确
+   - 现在：选择器内滚轮在 Modal 中垂直居中
 
-### Priority 1: Quote Internationalization
-- [ ] Switch device to Chinese → Wisdom tab shows Chinese quotes and author names
-- [ ] Switch to Japanese → quotes in Japanese
-- [ ] Switch to Arabic → quotes in Arabic (RTL layout)
-- [ ] Switch back to English → quotes in English
-- [ ] Tap next arrow → new quote with fade animation, in current language
-- [ ] Share quote → shared text is in current language
+### ASO 元数据重构（6 个市场）
 
-### Priority 2: Favorites After Migration
-- [ ] Previously saved favorites still appear (migrated from text to ID)
-- [ ] Save new quote → appears in Favorites page
-- [ ] Switch language → same favorites still shown (by ID, not text)
-- [ ] Long press to unfavorite → works
+已更新 title / subtitle / keywords：
+- 日语（ja）
+- 简体中文（zh-Hans）
+- 繁体中文（zh-Hant）
+- 韩语（ko）
+- 法语（fr）
+- 俄语（ru）
 
-### Priority 3: Purchase Flow
-- [ ] Settings > Upgrade to Pro → opens Paywall
-- [ ] Paywall shows price from RevenueCat (not hardcoded)
-- [ ] Tap purchase → Apple payment sheet appears (sandbox)
-- [ ] Restore Purchase works
+*注：ASO 元数据变更对 TestFlight 功能测试无直接影响，无需 beta 验证。*
 
-### Regression
-- [ ] Life screen percentage and grid display correctly
-- [ ] Birthday / Life Expectancy / Milestones editing works
-- [ ] All milestone icons are vector SVG
+---
+
+## 重点验证流程
+
+### 1. 多语言模板名（高优先级）
+
+**步骤：**
+1. iOS 设置 → 通用 → 语言 → 切换为 **日本語**，返回 App
+2. 进入 Settings → 点击"添加里程碑"
+3. 检查模板列表，名称是否为**日语**（例：「習慣形成」「プロジェクト完了」）
+4. 同样操作切换到**한국어**（韩语）、**中文（简体）**、**Deutsch**、**العربية** 各验证一次
+
+**验收标准：** 每种语言的模板名为对应语言文字，不应出现英文 fallback。
+
+### 2. 日期选择器居中弹出（高优先级）
+
+**步骤：**
+1. 进入任意里程碑详情
+2. 点击日期字段
+3. 观察 picker 出现位置
+
+**验收标准：** Picker 以 Modal 形式居中显示，不贴着列表、不偏上，周围有圆角卡片背景。
+
+### 3. DateTimePicker 滚轮居中（中优先级）
+
+**步骤：**
+1. 进入日期选择 Modal
+2. 观察年/月/日滚轮
+
+**验收标准：** 三列滚轮在 Modal 中垂直居中，无偏移。
+
+### 4. 内购流程（IAP 回归）
+
+**步骤：**
+1. 进入任意需要 Pro 的功能触发 Paywall
+2. 点击"一次性买断"按钮
+3. 观察加载状态和成功/失败反馈
+
+**验收标准：**
+- 按钮有加载动画，不卡死
+- 购买失败时有明确错误提示
+- TestFlight 沙盒购买不会实际扣款
+
+---
+
+## 已知风险
+
+- 语言切换后首次冷启动 App 有时需要强杀重开才能完全切换 i18n 资源（Expo 已知行为，不是本次引入）
+- ASC 处理 build 通常需要 10-30 分钟，TestFlight 才可安装
