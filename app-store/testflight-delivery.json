@@ -15,7 +15,7 @@
   "tester_email": "maruipp@gmail.com",
   "tester_id": "c5160043-57dc-41cc-9c3c-065527b1a6f4",
   "tester_state": "INSTALLED",
-  "build_association": "auto_included",
+  "build_association": "associated_manually",
   "changes": "1.0.1: 里程碑模板名 i18n（12语言）/ DateTimePicker Modal 居中弹出 / 滚轮居中 / 6个市场 ASO 元数据重构",
   "iap_preflight": {
     "required": true,
@@ -32,5 +32,6 @@
     "app_store_connect_api_key_configured": true,
     "subscription_key_configured": true,
     "status": "pass"
-  }
+  },
+  "build_association_note": "Agent originally wrote 'auto_included' but group hasAccessToAllBuilds=false; corrected after manual POST on 2026-04-22"
 }
