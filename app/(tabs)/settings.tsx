@@ -8,6 +8,7 @@ import {
   ActionSheetIOS,
   Platform,
   Pressable,
+  Modal,
 } from "react-native";
 import { useFocusEffect, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -25,7 +26,7 @@ import {
 } from "../../src/utils/storage";
 import { COLORS } from "../../src/utils/constants";
 import { Milestone } from "../../src/types";
-import { MILESTONE_TEMPLATES } from "../../src/data/milestones";
+import { MILESTONE_TEMPLATES, MilestoneTemplate } from "../../src/data/milestones";
 import { restorePurchases, checkProStatus } from "../../src/utils/purchases";
 
 function CalendarIcon() {
@@ -275,7 +276,7 @@ export default function SettingsScreen() {
   const [lifeExpectancy, setLifeExpectancy] = useState(80);
   const [restoringPurchase, setRestoringPurchase] = useState(false);
   const [isPro, setIsPro] = useState(false);
-  const [pendingMilestoneTemplate, setPendingMilestoneTemplate] = useState<(typeof MILESTONE_TEMPLATES)[0] | null>(null);
+  const [pendingMilestoneTemplate, setPendingMilestoneTemplate] = useState<MilestoneTemplate | null>(null);
   const [showMilestoneDatePicker, setShowMilestoneDatePicker] = useState(false);
   const [milestonePickerDate, setMilestonePickerDate] = useState(new Date());
 
@@ -351,10 +352,23 @@ export default function SettingsScreen() {
     }
   };
 
-  const handleAddMilestone = (template: (typeof MILESTONE_TEMPLATES)[0]) => {
+  const handleAddMilestone = (template: MilestoneTemplate) => {
     setPendingMilestoneTemplate(template);
     setMilestonePickerDate(new Date());
     setShowMilestoneDatePicker(true);
+  };
+
+  // Translate a stored milestone.name back through template lookup.
+  // New milestones are saved with the translated name in current language;
+  // legacy entries created before i18n keys existed still carry their
+  // English template name (e.g. "Graduation"), which we match against
+  // MILESTONE_TEMPLATES to recover the key and translate on-the-fly.
+  const translateMilestoneName = (storedName: string): string => {
+    const template = MILESTONE_TEMPLATES.find((tmpl) => tmpl.name === storedName);
+    if (template) {
+      return t(`milestones.${template.key}`);
+    }
+    return storedName;
   };
 
   const handleMilestoneDateChange = async (_event: any, selectedDate?: Date) => {
@@ -369,7 +383,10 @@ export default function SettingsScreen() {
       const dateStr = `${y}-${m}-${d}`;
       const newMilestone: Milestone = {
         id: Date.now().toString(),
-        name: pendingMilestoneTemplate.name,
+        // Persist the translated name in current language so list display
+        // shows the user's current-language version immediately, and legacy
+        // code that reads `milestone.name` directly still works.
+        name: t(`milestones.${pendingMilestoneTemplate.key}`),
         emoji: pendingMilestoneTemplate.emoji,
         icon: pendingMilestoneTemplate.icon,
         date: dateStr,
@@ -601,10 +618,12 @@ export default function SettingsScreen() {
               overflow: "hidden",
             }}
           >
-            {milestones.map((m, idx) => (
+            {milestones.map((m, idx) => {
+              const displayName = translateMilestoneName(m.name);
+              return (
               <TouchableOpacity
                 key={m.id}
-                onLongPress={() => confirmRemoveMilestone(m.id, m.name)}
+                onLongPress={() => confirmRemoveMilestone(m.id, displayName)}
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
@@ -618,7 +637,7 @@ export default function SettingsScreen() {
                 {renderMilestoneIcon(m)}
                 <View style={{ flex: 1 }}>
                   <Text style={{ fontSize: 15, color: "#E5E5E5", fontFamily: "Cormorant Garamond" }}>
-                    {m.name}
+                    {displayName}
                   </Text>
                   <Text style={{ fontSize: 12, color: "#6E6E70", fontFamily: "Cormorant Garamond", marginTop: 2 }}>
                     {formatMilestoneDate(m.date)}
@@ -633,12 +652,13 @@ export default function SettingsScreen() {
                   }}
                 />
               </TouchableOpacity>
-            ))}
+              );
+            })}
             <TouchableOpacity
               onPress={() => {
                 if (Platform.OS === "ios") {
                   const options = [
-                    ...MILESTONE_TEMPLATES.map((tmpl) => tmpl.name),
+                    ...MILESTONE_TEMPLATES.map((tmpl) => t(`milestones.${tmpl.key}`)),
                     t("common.cancel"),
                   ];
                   ActionSheetIOS.showActionSheetWithOptions(
@@ -659,7 +679,7 @@ export default function SettingsScreen() {
                     t("settings.chooseMilestone"),
                     [
                       ...MILESTONE_TEMPLATES.map((tmpl) => ({
-                        text: tmpl.name,
+                        text: t(`milestones.${tmpl.key}`),
                         onPress: () => handleAddMilestone(tmpl),
                       })),
                       { text: t("common.cancel"), style: "cancel" as const },
