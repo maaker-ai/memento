@@ -531,6 +531,7 @@ export default function SettingsScreen() {
                 backgroundColor: "#1A1A1A",
                 borderRadius: 12,
                 overflow: "hidden",
+                alignItems: "center",
               }}
             >
               <DateTimePicker
@@ -543,6 +544,7 @@ export default function SettingsScreen() {
                 locale={getPickerLocale()}
                 textColor="#E5E5E5"
                 themeVariant="dark"
+                style={{ width: "100%" }}
               />
             </View>
           )}
